@@ -92,13 +92,13 @@ export class VerifyBadgeDialog extends BaseDialog {
 					this.badgeAssertion = instance.result instanceof Array ? instance.result[0] : instance.result;
 				}
 				else {
-					this.messageService.reportAndThrowError("Failed to verify your badge");
+					this.messageService.reportAndThrowError("Falhou para verificar o Badge");
 				}
 
 			}
 			catch(e) {
 				this.closeDialog();
-				this.messageService.reportAndThrowError("Failed to verify your badge", e);
+				this.messageService.reportAndThrowError("Falhou para verificar o Badge", e);
 			}
 		}
 

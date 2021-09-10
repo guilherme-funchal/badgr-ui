@@ -130,15 +130,15 @@ export const defaultConfig: BadgrConfig = {
 		alternateLandingRedirect: false
 	},
 	help: {
-		email: "support@badgr.io"
+		email: "admin@serpro.gov.br"
 	},
 	googleAnalytics: {
 		trackingId: null
 	},
-	assertionVerifyUrl: "https://badgecheck.io/",
+	assertionVerifyUrl: "http://localhost/",
 	theme: {
 		serviceName: "Badgr",
-		welcomeMessage: `### Welcome!`,
+		welcomeMessage: `### Bem-vindo!`,
 		alternateLandingUrl: null,
 		showPoweredByBadgr: false,
 		showApiDocsLink: true,
@@ -147,8 +147,8 @@ export const defaultConfig: BadgrConfig = {
 		privacyPolicyLink: null,
 		providedBy: null,
 		logoImg: {
-			small: require("../../../node_modules/@concentricsky/badgr-style/dist/images/os-logo-small.svg") as string,
-			desktop: require("../../../node_modules/@concentricsky/badgr-style/dist/images/os-logo-large.svg") as string,
+			small: require("../../../node_modules/@concentricsky/badgr-style/dist/images/serpro-small.svg") as string,
+			desktop: require("../../../node_modules/@concentricsky/badgr-style/dist/images/serpro-large.svg") as string,
 		},
 		loadingImg: {
 			// Image is inlined here to avoid any external resource loading, at the expense of a larger initial file size. We only do this for the default theme.

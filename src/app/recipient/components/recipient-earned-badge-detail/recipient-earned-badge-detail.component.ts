@@ -95,10 +95,10 @@ export class RecipientEarnedBadgeDetailComponent extends BaseAuthenticatedRoutab
 
 	deleteBadge(badge: RecipientBadgeInstance) {
 		this.dialogService.confirmDialog.openResolveRejectDialog({
-			dialogTitle: "Confirm Remove",
-			dialogBody: `Are you sure you want to remove ${badge.badgeClass.name} from your badges?`,
-			rejectButtonLabel: "Cancel",
-			resolveButtonLabel: "Remove Badge"
+			dialogTitle: "Confirma Remover",
+			dialogBody: `Você tem certeza que deseja remover ${badge.badgeClass.name} dos seus badges?`,
+			rejectButtonLabel: "Cancela",
+			resolveButtonLabel: "Remover Badge"
 		}).then(
 			() => this.recipientBadgeManager.deleteRecipientBadge(badge).then(
 				() => {

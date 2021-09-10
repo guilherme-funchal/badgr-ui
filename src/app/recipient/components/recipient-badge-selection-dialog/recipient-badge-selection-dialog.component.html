@@ -29,17 +29,17 @@
 			<thead class="datatable-x-head">
 				<tr class="datatable-x-header">
 					<th class="datatable-x-cell">Badge</th>
-					<th class="datatable-x-cell">Awarded</th>
+					<th class="datatable-x-cell">Premiação</th>
 				</tr>
 			</thead>
 			<tbody class="datatable-x-body">
 				<ng-template [ngIf]="badgeResults.length < 1">
 					<p class="u-text u-padding-all3x">
 						<ng-template [ngIf]="hasMultipleIssuers">
-							No badges or issuers matching your query
+							Nenhum badge ou emissor corresponde à sua consulta
 						</ng-template>
 						<ng-template [ngIf]="!hasMultipleIssuers">
-							No badges matching your query
+							Nenhum badge corresponde à sua consulta
 						</ng-template>
 					</p>
 				</ng-template>

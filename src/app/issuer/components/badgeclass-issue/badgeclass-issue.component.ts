@@ -137,7 +137,7 @@ export class BadgeClassIssueComponent extends BaseAuthenticatedRoutableComponent
 		route: ActivatedRoute
 	) {
 		super(router, route, sessionService);
-		title.setTitle(`Award Badge - ${this.configService.theme['serviceName'] || "Badgr"}`);
+		title.setTitle(`Premiar com Badge - ${this.configService.theme['serviceName'] || "Badgr"}`);
 
 		this.issuerLoaded = this.issuerManager.issuerBySlug(this.issuerSlug).then((issuer) => {
 			this.issuer = issuer;
@@ -153,7 +153,7 @@ export class BadgeClassIssueComponent extends BaseAuthenticatedRoutableComponent
 					{title: issuer.name, routerLink: ['/issuer/issuers', this.issuerSlug] },
 					{title: 'badges', routerLink: ['/issuer/issuers/' + this.issuerSlug + '/badges/']},
 					{title: badgeClass.name, routerLink: ['/issuer/issuers', this.issuerSlug, 'badges', badgeClass.slug]},
-					{title: 'Award Badge'}
+					{title: 'Premiar com badge'}
 				];
 
 				if (badgeClass.expiresDuration && badgeClass.expiresAmount) {
@@ -161,7 +161,7 @@ export class BadgeClassIssueComponent extends BaseAuthenticatedRoutableComponent
 				}
 				this.issueForm.rawControlMap.expires.setValue(this.defaultExpiration);
 
-				this.title.setTitle(`Award Badge - ${badgeClass.name} - ${this.configService.theme['serviceName'] || "Badgr"}`);
+				this.title.setTitle(`Premiar com Badge - ${badgeClass.name} - ${this.configService.theme['serviceName'] || "Badgr"}`);
 			});
 		});
 	}

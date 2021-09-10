@@ -20,19 +20,19 @@
 					<p class="u-text u-text-small">
 						<strong [truncatedText]="issuer.email" [maxLength]="64"></strong>
 						<br class="u-hidden-minmobilelarge"><span class="u-hidden-maxmobilelarge">
-							— </span>Your Role: {{ issuer?.currentUserStaffMember?.roleInfo?.label }}
+							— </span>Seu papel: {{ issuer?.currentUserStaffMember?.roleInfo?.label }}
 					</p>
 					<p class="u-margin-top1x u-width-paragraph">
 						{{ issuer.description }}
 					</p>
 					<div class="u-margin-top1x">
-						<a href="{{issuer.websiteUrl}}" class="u-text-outlink">Visit Website<svg icon="icon_external_link"></svg></a>
+						<a href="{{issuer.websiteUrl}}" class="u-text-outlink">Visite o Website<svg icon="icon_external_link"></svg></a>
 					</div>
 					<p></p>
 				</div>
 				<div class="topbar-x-buttons">
 					<div class="l-primarymore">
-						<button class="button" [routerLink]="['./badges/create']">Create Badge</button>
+						<button class="button" [routerLink]="['./badges/create']">Criar Badge</button>
 						<button class="buttonicon buttonicon-secondary" [bgPopupMenuTrigger]="issuerActionsMenu">
 							<svg icon="icon_more"></svg>
 							<span class="visuallyhidden">More</span>
@@ -41,15 +41,15 @@
 					<bg-popup-menu #issuerActionsMenu>
 						<a class="menuitem" [routerLink]="['./edit']">
 							<svg icon="icon_edit"></svg>
-							Edit
+							Editar
 						</a>
 						<a class="menuitem" (click)="delete($event)" href="#">
 							<svg icon="icon_remove"></svg>
-							Delete
+							Excluir
 						</a>
 						<a class="menuitem" [routerLink]="['./staff']">
 							<svg icon="icon_group"></svg>
-							{{ issuer?.currentUserStaffMember?.isOwner ? "Manage": "View" }} Staff
+							{{ issuer?.currentUserStaffMember?.isOwner ? "Gerenciar": "Ver" }} Equipe
 						</a>
 						<a class="menuitem" *ngFor="let lp of launchpoints" href="{{lp.launch_url}}" target="_blank">
 							<svg icon="icon_external_link"></svg>
@@ -67,15 +67,15 @@
 		<section class="emptysection l-emptysection"
 			 *ngIf="! badges?.length">
 			<h2 class="emptysection-x-headline">
-				This Issuer has no badges
+				Este emissor não tem emblemas
 			</h2>
 			<p class="emptysection-x-copy">
-				No badges associated with this issuer, yet.</p>
+				Ainda não há emblemas associados a este emissor.</p>
 			<div class="emptysection-x-buttons">
 			    <button class="button button-secondary"
 			    		[routerLink]="['badges/create']"
 			    		[disabled-when-requesting]="true"
-	    		>Create a badge</button>
+	    		>Criar um badge</button>
 		  	</div>
 			<div class="emptysection-x-imagecontainer">
 				<img alt="Illustration" class="emptysection-x-image"
@@ -93,10 +93,10 @@
 				<thead class="datatable-x-head">
 					<tr class="datatable-x-header">
 						<th class="datatable-x-cell">Badge</th>
-						<th class="datatable-x-cell">Created</th>
-						<th class="datatable-x-cell">Recipients</th>
+						<th class="datatable-x-cell">Criado</th>
+						<th class="datatable-x-cell">Destinatários</th>
 						<th class="datatable-x-cell">
-							<span class="visuallyhidden">Actions</span></th>
+							<span class="visuallyhidden">Ações</span></th>
 					</tr>
 				</thead>
 				<tbody class="datatable-x-body">
@@ -112,7 +112,7 @@
 						</td>
 						<td class="datatable-x-cell">
 							<div class="l-flex l-flex-aligncenter">
-								<p class="u-text"><time [date]="badge.createdAt" format="mediumDate"></time></p>
+								<p class="u-text"><time [date]="badge.createdAt" format="dd/MM/yyyy"></time></p>
 							</div>
 						</td>
 						<td class="datatable-x-cell">
@@ -122,7 +122,7 @@
 						</td>
 						<td class="datatable-x-cell">
 							<div class="l-flex l-flex-aligncenter l-flex-justifyend">
-								<a class="u-text-link-small" [routerLink]="['/issuer/issuers/', issuer.slug, 'badges', badge.slug, 'issue']">Award</a>
+								<a class="u-text-link-small" [routerLink]="['/issuer/issuers/', issuer.slug, 'badges', badge.slug, 'issue']">Premiar</a>
 							</div>
 						</td>
 					</tr>

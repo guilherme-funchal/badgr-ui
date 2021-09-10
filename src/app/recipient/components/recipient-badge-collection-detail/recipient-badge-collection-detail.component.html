@@ -22,7 +22,7 @@
 										class="switch-x-toggletrack" 
 										type="checkbox" 
 										[(ngModel)]="collectionPublished">
-									<span class="switch-x-labeltext">Public</span>
+									<span class="switch-x-labeltext">Publico</span>
 									<div class="switch-x-toggle"></div>
 								</label>
 							</div>
@@ -32,18 +32,18 @@
 				<div class="topbar-x-checkboxbuttonform">
 					<div class="l-primarymore">
 						<button class="button" [class.button-is-disabled]="! collection?.published" [disabled]="! collection?.published"
-						 (click)="shareCollection()">Share Collection</button>
+						 (click)="shareCollection()">Compartilhar coleção</button>
 						<button class="buttonicon buttonicon-secondary" [bgPopupMenuTrigger]="collectionActionMenu">
 							<svg icon="icon_more"></svg>
-							<span class="visuallyhidden">More</span>
+							<span class="visuallyhidden">Mais</span>
 						</button>
 						<bg-popup-menu #collectionActionMenu>
 							<button class="menuitem" routerLinkActive="menuitem-is-active" (click)="editForm.startEditing()">
 								<svg icon="icon_edit"></svg>
-								Edit</button>
+								Editar</button>
 							<button class="menuitem" routerLinkActive="menuitem-is-active" (click)="deleteCollection()">
 								<svg icon="icon_remove"></svg>
-								Delete</button>
+								Excluir</button>
 						</bg-popup-menu>
 					</div>
 				</div>
@@ -63,14 +63,14 @@
 	<ng-container *ngIf="collection?.badgeEntries.length === 0">
 		<div class="emptysection l-emptysection">
 			<h2 class="emptysection-x-headline">
-				Your collection is empty
+				Sua coleção está vazia
 			</h2>
 			<p class="emptysection-x-copy">
-				Looks like you don't have any badges in here. Add some!</p>
+				Parece que você não tem badges aqui. Adicione alguns!!</p>
 			<div class="emptysection-x-buttons">
 			    <button class="button button-secondary" type="button"
 			    		(click)="manageBadges()"
-				>Add Badges</button>
+				>Adicionar badges</button>
 		  	</div>
 			<div class="emptysection-x-imagecontainer">
 				<img alt="Illustration" class="emptysection-x-image"
@@ -83,7 +83,7 @@
 	<ng-container *ngIf="collection?.badgeEntries.length > 0">
 		<div class="l-stack u-margin-bottom2x">
 			<h2 class="u-text-h3-semibold u-text-dark2">{{badgesInCollectionCount}}</h2>
-			<button class="button button-secondary" type="button" (click)="manageBadges()">Add Badges</button>
+			<button class="button button-secondary" type="button" (click)="manageBadges()">Adicionar Badges</button>
 		</div>
 			
 		<table class="datatable datatable-roundheaders datatable-verticalalignmiddle datatable-onlyfirstcolumn">
@@ -111,7 +111,7 @@
 						</div>
 					</th>
 					<td class="datatable-x-cell">{{ entry.badge.badgeClass.issuer.name }}</td>
-					<td class="datatable-x-cell"><time [date]="entry.badge.issueDate" format="longDate"></time></td>
+					<td class="datatable-x-cell"><time [date]="entry.badge.issueDate" format="dd/MM/yyyy"></time></td>
 					<td class="datatable-x-cell">
 						<button class="u-text-link-small u-margin-leftauto" type="button" (click)="removeEntry(entry)" [disabled-when-requesting]="true">Remove</button>
 					</td>

@@ -67,7 +67,7 @@ export function generateEmbedHtml(embedOptions) {
 			"style",
 			optionNameStyle
 		);
-		dateStrong.innerHTML = "Awarded:";
+		dateStrong.innerHTML = "Premiado em:";
 		dateP.appendChild(dateStrong);
 		dateP.setAttribute(
 			"style",
@@ -86,7 +86,7 @@ export function generateEmbedHtml(embedOptions) {
 			"style",
 			optionNameStyle
 		);
-		recipientStrong.innerHTML = "Awarded To:";
+		recipientStrong.innerHTML = "Concedido para:";
 		recipientP.appendChild(recipientStrong);
 		recipientP.setAttribute(
 			"style",
@@ -123,10 +123,10 @@ export function generateEmbedHtml(embedOptions) {
 				"width: 18px; margin-right: 8px;"
 			);
 			verifyTag.appendChild(checkImg);
-			verifyTag.innerHTML += " VERIFIED!";
+			verifyTag.innerHTML += " Validado!";
 			verifyTag.style.width = "90px";
 		} else {
-			verifyTag.innerHTML = "VERIFY";
+			verifyTag.innerHTML = "Validar";
 		}
 
 		verifyP.appendChild(verifyTag);

@@ -23,7 +23,7 @@
 				(click)="openTab('link')"
 				class="tab">
 					<span class="visuallyhidden">
-						Open the </span> Link
+						Abra o </span> Link
 				<span class="visuallyhidden"> tab</span>
 			</button>
 			<button
@@ -31,7 +31,7 @@
 				(click)="openTab('social')"
 				class="tab">
 					<span class="visuallyhidden">
-						Open the </span>Social
+						Abra o </span>Social
 				<span class="visuallyhidden"> tab</span>
 			</button>
 			<button
@@ -40,7 +40,7 @@
 				*ngIf="hasEmbedSupport"
 				class="tab">
 					<span class="visuallyhidden">
-						Open the </span>HTML
+						Abra com </span>HTML
 				<span class="visuallyhidden"> tab</span>
 			</button>
 		</nav>
@@ -49,7 +49,7 @@
 		<div class="u-responsivepadding-yaxis u-responsivepadding-xaxis" tabindex="-1" id="sharelink" *ngIf="currentTabId == 'link'">
 
 			<ng-template [ngIf]="options?.showRecipientOptions" >
-				<p class="u-text-bold u-margin-bottom3x">Badge Options:</p>
+				<p class="u-text-bold u-margin-bottom3x">Opções de Badge:</p>
 				<label class="checkbox checkbox-light u-margin-bottom5x">
 					<input
 						[(ngModel)]="includeRecipientIdentifier"
@@ -57,14 +57,14 @@
 						type="checkbox"
 						checked>
 					<span class="checkbox-x-text">
-              <strong>Include Recipient Identifier:</strong> <br>
+              <strong>Incluir este destinário:</strong> <br>
               {{ options.recipientIdentifier }}
             </span>
 				</label>
 			</ng-template>
 
 			<div class="forminput forminput-hasiconleft forminput-withbutton u-margin-bottom3x" *ngIf="options">
-				<label class="forminput-x-label" for="link-input">Copy this link to share</label>
+				<label class="forminput-x-label" for="link-input">Copiar este link para compartilhar</label>
 				<div class="forminput-x-inputs">
 					<svg class="forminput-x-icon" icon="icon_link"></svg>
 
@@ -93,7 +93,7 @@
 				*ngIf="options"
 				[href]="currentShareUrl"
 				target="_blank"
-				class="u-text-link-small">Open in New Window</a>
+				class="u-text-link-small">Abrir em uma nova janela</a>
 
 		</div>
 
@@ -104,7 +104,7 @@
 				*ngIf="currentTabId === 'social'"
 		>
 			<ng-template [ngIf]="options.showRecipientOptions">
-				<p class="u-text-bold u-margin-bottom3x">Badge Options:</p>
+				<p class="u-text-bold u-margin-bottom3x">Opções de Badge:</p>
 				<label class="checkbox checkbox-light u-margin-bottom5x">
 					<input
 						id="form-checkbox"
@@ -113,7 +113,7 @@
 						(ngModelChange)="updateEmbedHtml()"
 						checked >
 					<span class="checkbox-x-text">
-						<strong>Include Recipient Identifier:</strong> <br>
+						<strong>Incluir este identificador de destinatário:</strong> <br>
 						{{ options.recipientIdentifier }}
 					</span>
 				</label>
@@ -168,7 +168,7 @@
 			</div>
 
 			<ng-template [ngIf]="options?.showRecipientOptions">
-				<p class="u-text-bold u-margin-bottom2x">Included Badge Options</p>
+				<p class="u-text-bold u-margin-bottom2x">Opções de Badge incluidas</p>
 
 				<label class="checkbox checkbox-light u-margin-bottom2x">
 					<input
@@ -177,7 +177,7 @@
 						type="checkbox"
 						checked>
 					<span class="checkbox-x-text">
-              <strong>Recipient Identifier:</strong> <br>
+              <strong>Identificador do destinatário:</strong> <br>
 						{{ options.recipientIdentifier }}
             </span>
 				</label>
@@ -191,7 +191,7 @@
 						type="checkbox"
 						checked>
 					<span class="checkbox-x-text">
-              Badge Name
+              Nome do Badge
             </span>
 				</label>
 
@@ -204,7 +204,7 @@
 						type="checkbox"
 						checked>
 					<span class="checkbox-x-text">
-              Date Awarded
+              Data premiação
             </span>
 				</label>
 
@@ -217,20 +217,20 @@
 						type="checkbox"
 						checked>
 					<span class="checkbox-x-text">
-              Verification
+              Verificação
             </span>
 				</label>
 
 			</ng-template>
 
-			<p class="u-text-small-bold u-margin-bottom0p5x u-margin-top2x">Preview</p>
+			<p class="u-text-small-bold u-margin-bottom0p5x u-margin-top2x">Exemplo</p>
 
 			<iframe src="about:blank"
 							class="previewIframe"
 							style="width: 100%"></iframe>
 
 			<div class="forminput forminput-code u-margin-top3x u-margin-bottom2x">
-				<label class="forminput-x-label" for="emebed-code-box">Embeded Code</label>
+				<label class="forminput-x-label" for="emebed-code-box">Código HTML</label>
 				<div class="forminput-x-inputs">
 					<textarea
 						id="emebed-code-box"
@@ -246,7 +246,7 @@
 					type="button"
 					[hidden]="! copySupported"
 					(click)="copyToClipboard(embedHtmlInput)"
-					class="button button-secondary">Copy</button>
+					class="button button-secondary">Copiar</button>
 			</div>
 		</div>
 

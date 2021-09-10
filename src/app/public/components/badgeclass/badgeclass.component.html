@@ -71,7 +71,7 @@
 									 [error-src]="issuerImagePlacholderUrl"
 									 width="40" />
 							</div><div>
-								<dt class="u-text-small-bold">Issued by:</dt>
+								<dt class="u-text-small-bold">Publicado por:</dt>
 								<dd class="u-text">
 	                				<a class="u-break-word"
 	                					[routerLink]="routerLinkForUrl(issuer.hostedUrl || issuer.id)"
@@ -83,7 +83,7 @@
 				</div>
 			</div>
 			<div class="badgedetail-x-desc">
-				<h2 class="u-text-h3-semibold u-margin-bottom2x u-hidden-mintablet">Description</h2>
+				<h2 class="u-text-h3-semibold u-margin-bottom2x u-hidden-mintablet">Descrição</h2>
 				<p class="u-text-body u-width-paragraph">{{ badgeClass.description }}</p>
 			</div>
 			<div class="badgedetail-x-body">
@@ -92,7 +92,7 @@
 				<section *ngIf="badgeClass.criteria">
 					<h3 class="u-text-h3-semibold u-text-dark2 u-margin-bottom2x u-margin-top4x"
 						*ngIf="badgeClass.criteria.id || badgeClass.criteria.narrative"
-						>Criteria</h3>
+						>Critério</h3>
 					<show-more>
 						<markdown-display
 							 *ngIf="badgeClass.criteria.narrative"
@@ -103,7 +103,7 @@
 							*ngIf="badgeClass.criteria.id">
 							<a class="u-text-outlink" target="_blank"
 								[href]="badgeClass.criteria.id"
-							>View External Criteria URL
+							>Ver URL de critério externo
 								<svg icon="icon_external_link"></svg>
 							</a>
 						</div>

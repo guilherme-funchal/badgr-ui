@@ -23,7 +23,7 @@ import {throwExpr} from '../util/throw-expr';
 				*ngIf="generateRandom"
 				(click)="$event.preventDefault();generateRandomImage.emit()"
 				class="forminput-x-helplink"
-				href="#">Generate Random</a>
+				href="#">Gerar Randomico</a>
 		</div>
 		<input type="file"
 				accept="image/*"
@@ -50,8 +50,8 @@ import {throwExpr} from '../util/throw-expr';
 
 			<ng-container *ngIf="!imageDataUrl">
 				<svg class="dropzone-x-icon" icon="icon_upload"></svg>
-				<p class="dropzone-x-info1">Drag and drop</p>
-				<p class="dropzone-x-info2">or <span class="u-text-link">browse</span></p>
+				<p class="dropzone-x-info1">Arrastar e soltar</p>
+				<p class="dropzone-x-info2">ou <span class="u-text-link">Navegar</span></p>
 			</ng-container>
 
 		</label>

@@ -1,15 +1,15 @@
 <section class="l-containerxaxis l-containeryaxis">
     <div class="u-width-form">
         <article class="contentlong">
-            <h2>Instructions</h2>
+            <h2>Instruções</h2>
             <p>
-                You may import a list of people to award this badge to. Your file must meet the following requirements:
+                Você pode importar uma lista de pessoas para conceder este emblema. Seu arquivo deve atender aos seguintes requisitos:
             </p>
             <ol>
                 <li>
-                    Contains email address and the Evidence URL.
+                    Contem email e URL da Evidencia.
                 </li>
-                <li>CSV or TXT format only.</li>
+                <li>Somente formato CSV ou TXT.</li>
             </ol>
             <p>
                 Use this
@@ -17,9 +17,9 @@
                     [href]="badgrBulkIssueTemplateUrl"
                     download="badgr-bulk-issue-template.csv"
                 >
-                    Sample Template
+                    Modelo de exemplo
                 </a>
-                to create a CSV or TXT file for Bulk Issuing badges.
+                Para criar um arquivo CSV ou TXT para emblemas de emissão em massa.
             </p>
         </article>
         <form
@@ -44,7 +44,7 @@
                 class="button button-secondary"
                 (click)="updateViewState('cancel')"
             >
-                Cancel
+                Cancela
             </button>
 
             <button
@@ -53,7 +53,7 @@
                 [attr.disabled]="rawCsv ? null : true "
                 (click)="importAction()"
             >
-                Import
+                Importar
             </button>
         </div>
     </div>

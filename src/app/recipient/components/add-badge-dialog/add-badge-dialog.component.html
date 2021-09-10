@@ -8,7 +8,7 @@
 			<h2 id="addBadgeDialog"
 			    class="u-text-body-bold-caps text-dark1"
 			>
-				Add Badge
+				Adicionar Badge
 			</h2>
 			<button class="buttonicon buttonicon-link"
 			        (click)="closeDialog()"
@@ -23,7 +23,7 @@
 		      (ngSubmit)="submitBadgeRecipientForm()"
 		>
 			<p class="u-padding-yaxis2x u-responsivepadding-xaxis border-light3 u-text-body u-background-light3">
-				Add a badge you’ve already received using one of the options below.
+				Adicione um badge que você já recebeu usando uma das opções abaixo.
 			</p>
 
 			<div class="tabbar">
@@ -76,7 +76,7 @@
 					                   errorMessage="Please enter valid URL"
 					                   (change)="controlUpdated(addRecipientBadgeForm.controls.url)"
 					                   includeLabelAsWrapper="true"
-					                   placeholder="Enter URL"
+					                   placeholder="Entre URL"
 					                   [autofocus]="true"
 					                   #urlField
 					></bg-formfield-text>
@@ -90,8 +90,8 @@
 			>
 				<div class="forminput">
 					<bg-formfield-text [control]="addRecipientBadgeForm.rawControlMap.assertion"
-					                   errorMessage="Please enter valid JSON"
-					                   placeholder="Enter JSON"
+					                   errorMessage="Insira um JSON válido"
+					                   placeholder="Entre JSON"
 					                   (change)="controlUpdated(addRecipientBadgeForm.controls.assertion)"
 					                   [multiline]="true"
 					                   [monospaced]="true"

@@ -2,7 +2,7 @@
 <ng-template #dialogLoading>
 	<div class="dialog-x-box o-container">
 		<div class="dialog-x-header u-background-light3">
-			<h1>Verify Badge</h1>
+			<h1>Verifica Badge</h1>
 			<button class="buttonicon buttonicon-link"
 			        (click)="closeDialog()">
 				<svg class="navitem-x-icon" icon="icon_close"></svg>
@@ -62,8 +62,8 @@
 							</h1>
 							<p class="u-text u-text-small u-width-small u-animate-step6">
 								{{isBadgeVerified
-									? 'This badge has been verified by Badgr and its information is valid.'
-									: 'This badge has not been verified by Badgr.'
+									? 'Este badge foi verificado por Badgr e suas informações são válidas.'
+									: 'Este badge não foi verificado.'
 								}}
 							</p>
 							<dl class="u-text u-margin-top2x">
@@ -74,13 +74,13 @@
 									     [icon]="   awardedState === AWARDED_STATES.MATCH ? 'icon_checkmark_circle' : 'icon_error' "
 									></svg>
 									<div>
-										<dt class="u-text-small-bold u-text-dark2">Awarded To</dt>
+										<dt class="u-text-small-bold u-text-dark2">Premiado a</dt>
 										<dd class="u-margin-bottom2x"
 										    [ngSwitch]="awardedState"
 										>
 											<ng-container *ngSwitchCase="AWARDED_STATES.MATCH"> {{identityEmail}}</ng-container>
-											<ng-container *ngSwitchCase="AWARDED_STATES.NO_MATCH"> This badge was not awarded to {{identityEmail}} </ng-container>
-											<ng-container *ngSwitchCase="AWARDED_STATES.NOT_VERIFIED"> Recipient not verified </ng-container>
+											<ng-container *ngSwitchCase="AWARDED_STATES.NO_MATCH"> Este badge não foi concedido a {{identityEmail}} </ng-container>
+											<ng-container *ngSwitchCase="AWARDED_STATES.NOT_VERIFIED"> Destinatário não verificado </ng-container>
 										</dd>
 									</div>
 								</div>
@@ -91,7 +91,7 @@
 									></svg>
 									<div>
 										<dt class="u-text-small-bold u-text-dark2">Issued On</dt>
-										<dd class="u-margin-bottom2x"><time [date]="badgeAssertion?.issuedOn" format="mediumDate"></time></dd>
+										<dd class="u-margin-bottom2x"><time [date]="badgeAssertion?.issuedOn" format="dd/MM/yyyy"></time></dd>
 									</div>
 								</div>
 
@@ -101,12 +101,12 @@
 											 [icon]="expiryState !== EXPIRY_STATES.EXPIRED ? 'icon_checkmark_circle' : 'icon_error' "
 									></svg>
 									<div>
-										<dt class="u-text-small-bold u-text-dark2">Expires On</dt>
+										<dt class="u-text-small-bold u-text-dark2">Expira em</dt>
 										<dd class="u-margin-bottom2x"
 												[ngSwitch]="expiryState"
 										>
-											<ng-container *ngSwitchCase="EXPIRY_STATES.EXPIRED"> Expired</ng-container>
-											<ng-container *ngSwitchCase="EXPIRY_STATES.NEVER_EXPIRES"> Does not expire</ng-container>
+											<ng-container *ngSwitchCase="EXPIRY_STATES.EXPIRED"> Expirado</ng-container>
+											<ng-container *ngSwitchCase="EXPIRY_STATES.NEVER_EXPIRES"> Não expira</ng-container>
 											<ng-container *ngSwitchCase="EXPIRY_STATES.NOT_EXPIRED">
 												<time [date]="badgeAssertion?.expires"
 															format="mediumDate"
@@ -125,10 +125,10 @@
 				<a class="u-text-outlink"
 				   [href]="verifyUrl"
 				>
-					Independently Verify Badge
+					Verificar o selo de forma independente
 					<svg icon="icon_external_link"></svg>
 				</a>
-				<button class="button" (click)="closeDialog()">Done</button>
+				<button class="button" (click)="closeDialog()">Feito</button>
 			</div>
 
 		</div>

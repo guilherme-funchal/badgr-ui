@@ -2,10 +2,10 @@
 <div class="topbar">
 	<div class="l-containerxaxis">
 		<div class="topbar-x-heading">
-			Create Issuer
+			Criar emissor
 		</div>
 		<div class="topbar-x-subheading">
-			Creating an issuer allows you to award badges to recipients.
+			A criação de um emissor permite que você atribua emblemas aos destinatários.
 		</div>
 	</div>
 </div>
@@ -18,7 +18,7 @@
 	      novalidate
 	>
 		<bg-formfield-image #imageField
-		                    label="Image (Optional)"
+		                    label="Image (Opcional)"
 		                    imageLoaderName="issuer"
 		                    [placeholderImage]="issuerImagePlacholderUrl"
 		                    [control]="issuerForm.rawControlMap.issuer_image"
@@ -26,15 +26,15 @@
 
 		<bg-formfield-text class="u-margin-yaxis2x"
 		                   [control]="issuerForm.rawControlMap.issuer_name"
-		                   [label]="'Name'"
-		                   [errorMessage]="{required:'Please enter an issuer name'}"
+		                   [label]="'Nome'"
+		                   [errorMessage]="{requirido:'Insira um nome de emissor'}"
 		                   [autofocus]="true"
 		></bg-formfield-text>
 
 		<bg-formfield-text class="u-margin-bottom2x"
 		                   [control]="issuerForm.rawControlMap.issuer_url"
-		                   [label]="'Website URL'"
-		                   [errorMessage]="'Please enter a valid URL'"
+		                   [label]="'URL do site'"
+		                   [errorMessage]="'Por favor, insira um URL válido'"
 		                   [urlField]="true"
 		                   [fieldType]="'url'"
 		                   type="url"
@@ -42,16 +42,16 @@
 
 		<bg-formfield-select class="u-margin-bottom2x"
 		                     [control]="issuerForm.rawControlMap.issuer_email"
-		                     [label]="'Contact Email'"
-		                     [placeholder]="'Please select a verified email'"
+		                     [label]="'Email de contato'"
+		                     [placeholder]="'Selecione um e-mail verificado'"
 		                     [options]="emailsOptions"
-		                     [errorMessage]="{required:'Please select a verified email'}"
+		                     [errorMessage]="{requerido:'Por favor insira email válido'}"
 		></bg-formfield-select>
 
 		<bg-formfield-text class="u-margin-bottom2x"
 		                   [control]="issuerForm.rawControlMap.issuer_description"
-		                   [label]="'Description'"
-		                   [errorMessage]="{ required: 'Please enter a description'}"
+		                   [label]="'Descrição'"
+		                   [errorMessage]="{ requerido: 'Por favor insira uma descrição'}"
 		                   [multiline]="true"
 		></bg-formfield-text>
 
@@ -65,14 +65,13 @@
 			       type="checkbox"
 			       [formControl]="issuerForm.rawControlMap.agreedTerms"
 			>
-			<span class="checkbox-x-text">I have read and agree to the <a target="_blank"
+			<span class="checkbox-x-text">Eu li e concordo com o <a target="_blank"
 			                                                              [href]="dataProcessorUrl"
 			>Data
 						Processor Addendum</a>.
 				<div *ngIf="issuerForm.rawControlMap.agreedTerms.dirty && !issuerForm.rawControlMap.agreedTerms.valid"
 				     class="checkbox-x-errortext"
-				>Please
-						read and agree to the Data Processor Addendum if you want to continue.</div>
+				>Por favor leia e concorde com o Adendo do Processador de Dados se quiser continuar.</div>
 				</span>
 
 		</label>
@@ -81,13 +80,13 @@
 			<a [routerLink]="['/issuer']"
 			   class="button button-secondary"
 			   [disabled-when-requesting]="true"
-			>Cancel</a>
+			>Cancelar</a>
 			<button type="submit"
 			        class="button"
 			        [disabled]="!! addIssuerFinished"
 			        [loading-promises]="[ addIssuerFinished ]"
-			        loading-message="Adding"
-			>Add Issuer
+			        loading-message="Adicionando"
+			>Adicionar emissor
 			</button>
 		</div>
 

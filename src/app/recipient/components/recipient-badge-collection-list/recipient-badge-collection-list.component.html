@@ -4,15 +4,15 @@
 		<div class="topbar">
 			<div class="l-containerxaxis topbar-x-wrap">
 				<h2 class="topbar-x-heading">
-					Collections
+					Coleções
 					<span class="topbar-x-internalheading" *ngIf="!! badgeCollections">
-						{{ badgeCollections.length }} {{ badgeCollections.length == 1 ? "Collection" : "Collections" }}
+						{{ badgeCollections.length }} {{ badgeCollections.length == 1 ? "Coleção" : "Coleções" }}
 					</span>
 				</h2>
 				<button class="button topbar-x-button"
 						[routerLink]="['/recipient/badge-collections/create']"
 						[disabled-when-requesting]="true"
-				>Create Collection</button>
+				>Criar Coleção</button>
 			</div>
 		</div>
 	
@@ -24,15 +24,15 @@
 			<div class="emptysection l-emptysection"
 				 *ngIf="badgeCollections.length == 0">
 				<h2 class="emptysection-x-headline">
-					You have no collections</h2>
+					Você não tem coleções</h2>
 				<p class="emptysection-x-copy">
-					Collections are a way to organize and share badges you've earned.
+					As coleções são uma forma de organizar e compartilhar os emblemas que você ganhou.
 				</p>
 				<div class="emptysection-x-buttons">
 				    <button class="button button-secondary"
 				    		[routerLink]="['/recipient/badge-collections/create']"
 							[disabled-when-requesting]="true"
-					>Create Collection</button>
+					>Criar coleção</button>
 			  	</div>
 				<div class="emptysection-x-imagecontainer">
 					<img alt="Illustration" class="emptysection-x-image"
@@ -73,7 +73,7 @@
 								</div>
 							</fieldset>
 						</div>
-						<button class="u-text-link-small" *ngIf="collection.published" type="button" (click)="shareCollection(collection)">Share</button>
+						<button class="u-text-link-small" *ngIf="collection.published" type="button" (click)="shareCollection(collection)">Compartilhe</button>
 					</div>
 				</div>
 			</div>

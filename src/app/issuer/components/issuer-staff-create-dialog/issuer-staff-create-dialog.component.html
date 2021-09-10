@@ -2,22 +2,22 @@
 	<div class="dialog-x-box o-container">
 
 		<div class="dialog-x-header">
-			<h1>Add Member</h1>
+			<h1>Adicionar membro</h1>
 			<button
 				(click)="closeDialog()"
 				class="buttonicon buttonicon-link">
 				<svg icon="icon_close"></svg>
-				<span class="visuallyhidden">Close</span>
+				<span class="visuallyhidden">Fechar</span>
 			</button>
 		</div>
 
 		<div class="u-padding-all3x">
 
 			<div class="l-flex l-flex-justifybetween u-margin-bottom3x">
-				<p class="u-text-body">New Staff Members must create and verify a Badgr account prior to being added to an issuer.</p>
+				<p class="u-text-body">Novos membros da equipe devem criar e verificar uma conta Badgr antes de serem adicionados a um emissor.</p>
 			</div>
 
-			<h3 class="u-margin-bottom2x u-text-small-bold">Choose Role</h3>
+			<h3 class="u-margin-bottom2x u-text-small-bold">Escolha papel</h3>
 			<form
 				[formGroup]="staffCreateForm.rawControl"
 				(ngSubmit)="submitStaffCreate()">
@@ -33,9 +33,9 @@
 				></bg-formfield-radio>
 				<bg-formfield-text
 					[control]="staffCreateForm.rawControlMap.staffEmail"
-					[label]="'New Member Email'"
-					[errorMessage]="'Please enter valid email address'"
-					placeholder="Staff Email"
+					[label]="'Email de novo membro'"
+					[errorMessage]="'Por favor insira o endereço de e-mail válido'"
+					placeholder="Email da equipe"
 					class="forminput-light1 u-width-formsmall u-margin-top3x"></bg-formfield-text>
 				<br>
 
@@ -49,7 +49,7 @@
 					</div>
 					<div class="notification-x-text">
 
-						<h2>Failed to add member!</h2>
+						<h2>Falha para adicionar membro!</h2>
 						<p>{{error}}</p>
 
 					</div>
@@ -57,11 +57,11 @@
 
 				<div class="l-stack l-stack-buttons u-margin-top4x">
 					<button
-						class="button">Add Member</button>
+						class="button">Adicionar membro</button>
 					<button
 						class="button button-secondary"
 						type="button"
-						(click)="$event.preventDefault(); closeDialog();">Cancel</button>
+						(click)="$event.preventDefault(); closeDialog();">Cancelar</button>
 				</div>
 
 			</form>

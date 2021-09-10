@@ -37,7 +37,7 @@
                 <a class="oembedbadge-x-btn button button-tertiary"
                     [href]="assertion.id"
                     target="_blank"
-                >View Credential</a>
+                >Ver Credencial</a>
 			</div>
 			<div class="oembedbadge-x-summary">
 				<h1>{{badgeClass.name}}</h1>
@@ -45,26 +45,26 @@
 					<img [loaded-src]="issuer.image"
 					     [loading-src]="issuerImagePlacholderUrl"
 					     [error-src]="issuerImagePlacholderUrl"
-                         alt="Issuer logo"
+                         alt="Logo emissor"
 					     width=48
 					/>
 					<dl>
-						<dt>Issued By</dt>
+						<dt>Emitido por</dt>
 						<dd>{{issuer.name}}</dd>
 					</dl>
 				</div>
 				<dl class="oembedbadge-x-info">
-					<dt>Issued On</dt>
+					<dt>Emitido em</dt>
 					<dd>
-						<time [date]="assertion.issuedOn" format="mediumDate"></time>
+						<time [date]="assertion.issuedOn" format="dd/MM/yyyy"></time>
 					</dd>
 				</dl>
 				<dl class="oembedbadge-x-info"
 				    *ngIf="assertion.expires"
 				>
-					<dt>Expires On</dt>
+					<dt>Expira em</dt>
 					<dd>
-						<time [date]="assertion?.expires" format="mediumDate"></time>
+						<time [date]="assertion?.expires" format="dd/MM/yyyy"></time>
 					</dd>
 				</dl>
 			</div>
@@ -130,7 +130,7 @@
 						 width="200" />
 					<div class="badgestatus badgestatus-expired u-margin-auto"
 						 *ngIf="assertion.expires && isExpired"
-						 >Expired</div>
+						 >Expirado</div>
 
 					<!-- Issuer Information -->
 					<dl>
@@ -142,20 +142,20 @@
 									 width="40" />
 							</div>
 							<div>
-								<dt class="u-text-small-bold u-text-dark2">Issued by:</dt>
+								<dt class="u-text-small-bold u-text-dark2">Publicado por:</dt>
 								<dd class="u-text">
 	                				<a class="u-break-word" [href]="issuer.id">{{ issuer.name }}</a>
 	            				</dd>
 							</div>
 						</div>
-						<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2">Issued on:</dt>
-						<dd class="u-text"><time [date]="assertion.issuedOn" format="mediumDate"></time></dd>
-				    	<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2" *ngIf="awardedToDisplayName">Awarded to:</dt>
+						<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2">Emitido em:</dt>
+						<dd class="u-text"><time [date]="assertion.issuedOn" format="dd/MM/yyyy"></time></dd>
+				    	<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2" *ngIf="awardedToDisplayName">Concedido a:</dt>
 				    	<dd class="u-text u-break-all">{{ awardedToDisplayName }}</dd>
 				    	<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2" *ngIf="assertion.expires">
 				    		<span>{{ +isExpired | i18nPlural: tense['expires'] }} on:</span>
 				    	</dt>
-							<dd class="u-text" *ngIf="assertion.expires"><time [date]="assertion?.expires" format="mediumDate"></time></dd>
+							<dd class="u-text" *ngIf="assertion.expires"><time [date]="assertion?.expires" format="dd/MM/yyyy"></time></dd>
 					</dl>
 				</div>
 			</div>
@@ -170,7 +170,7 @@
 					<h3
 						*ngIf="badgeClass.criteria.id || badgeClass.criteria.narrative || badgeClass.criteria"
 						class="u-text-h3-semibold u-text-dark2 u-margin-bottom2x u-margin-top4x"
-					>Criteria</h3>
+					>Critério</h3>
 					<show-more class="u-margin-bottom8x"
 										 *ngIf="badgeClass.criteria.narrative">
 						<markdown-display
@@ -180,7 +180,7 @@
 						*ngIf="badgeClass.criteria.id">
 						<a class="u-text-outlink" target="_blank"
 							[href]="badgeClass.criteria.id"
-						>View External Criteria URL
+						>Ver URL de critério externo 
 							<svg icon="icon_external_link"></svg>
 						</a>
 					</div>
@@ -233,7 +233,7 @@
 					<!-- || assertion.evidence.narrative -->
 					<h3
 						*ngIf="assertion?.narrative"
-						class="u-text-h3-semibold u-margin-bottom2x u-margin-top4x">Narrative</h3>
+						class="u-text-h3-semibold u-margin-bottom2x u-margin-top4x">Narrativa</h3>
 
 					<show-more *ngIf="assertion?.narrative">
 						<markdown-display [value]="assertion?.narrative"></markdown-display>
@@ -244,7 +244,7 @@
 					</show-more>
 
 					<div *ngFor="let evidence of assertion?.evidence; let i=index">
-						<h3 class="u-text-h3-semibold u-margin-bottom2x u-margin-top4x">Evidence</h3>
+						<h3 class="u-text-h3-semibold u-margin-bottom2x u-margin-top4x">Evidencia</h3>
 						<markdown-display [value]="evidence?.narrative"></markdown-display>
 						<div class="u-margin-yaxis2x">
 							<a
@@ -252,7 +252,7 @@
 								class="u-text-outlink"
 								[href]="evidence.id"
 								target="_blank"
-							>View Evidence URL
+							>Ver URL da Evidencia
 								<svg icon="icon_external_link"></svg>
 							</a>
 						</div>

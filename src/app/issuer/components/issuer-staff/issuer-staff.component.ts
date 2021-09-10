@@ -73,7 +73,7 @@ export class IssuerStaffComponent extends BaseAuthenticatedRoutableComponent imp
 				this.breadcrumbLinkEntries = [
 					{title: 'Issuers', routerLink: ['/issuer']},
 					{title: issuer.name, routerLink: ['/issuer/issuers', this.issuerSlug]},
-					{title: this.isCurrentUserIssuerOwner ? 'Manage Staff' : 'View Staff'}
+					{title: this.isCurrentUserIssuerOwner ? 'Gerenciar equipe' : 'Ver equipe'}
 				];
 				return issuer;
 			});

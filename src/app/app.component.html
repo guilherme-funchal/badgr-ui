@@ -16,7 +16,7 @@
 					<a [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/auth/login']">Sign
 						In</a>
 					<a *ngIf="!features.disableRegistration" [class.navitem-light]="!theme.useColorNavbar" class="navitem"
-						 routerLinkActive="navitem-is-active" [routerLink]="['/signup']">Create Account</a>
+						 routerLinkActive="navitem-is-active" [routerLink]="['/signup']">Criar conta</a>
 				</div>
 			</nav>
 		</ng-template>
@@ -28,9 +28,9 @@
 					<a role="menuitem" [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active"
 					 [routerLink]="['/recipient/badges']">Backpack</a>
 					<a role="menuitem" [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active"
-					 [routerLink]="['/recipient/badge-collections']">Collections</a>
+					 [routerLink]="['/recipient/badge-collections']">Coleções</a>
 					<a role="menuitem" *ngIf="showIssuersTab" [class.navitem-light]="!theme.useColorNavbar"
-					 class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/issuer']">Issuers</a>
+					 class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/issuer']">Emissores</a>
 					<button role="menuitem" aria-haspopup="true" [class.navitem-light]="!theme.useColorNavbar" class="navitem u-cursor-pointer"
 					 *ngIf="launchpoints?.length" routerLinkActive="navitem-is-active" [bgPopupMenuTrigger]="appsMenu">
 						Apps
@@ -43,7 +43,7 @@
 					</a>
 					<button role="menuitem" aria-haspopup="true" [class.navitem-light]="!theme.useColorNavbar" class="navitem u-cursor-pointer"
 					 routerLinkActive="navitem-is-active" [bgPopupMenuTrigger]="accountMenu">
-						Account
+						Conta
 						<svg class="navitem-x-icon" icon="icon_dropdown"></svg>
 					</button>
 				</div>
@@ -72,18 +72,18 @@
 	</bg-popup-menu>
 
 	<bg-popup-menu #accountMenu>
-		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/profile/profile']"><svg icon="icon_member"></svg>Profile</a>
+		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/profile/profile']"><svg icon="icon_member"></svg>Perfil</a>
 		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/profile/app-integrations']"><svg icon="icon_compare"></svg>App
-			Integrations</a>
-		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/auth/logout']"><svg icon="icon_exit_to_app"></svg>Sign
-			Out</a>
+			Integradas</a>
+		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/auth/logout']"><svg icon="icon_exit_to_app"></svg>Sair
+			</a>
 	</bg-popup-menu>
 
 
 	<nav class="l-dialog mobilenav" [class.mobilenav-is-active]="mobileNavOpen" *ngIf="!loggedIn" [class.mobilenav-light]="!theme.useColorNavbar">
 		<div class="mobilenav-x-navitems">
-			<a routerLinkActive="menuitem-is-active" [routerLink]="['/auth/login']">Sign In</a>
-			<a routerLinkActive="menuitem-is-active" [routerLink]="['/signup']">Create Account</a>
+			<a routerLinkActive="menuitem-is-active" [routerLink]="['/auth/login']">Entrar</a>
+			<a routerLinkActive="menuitem-is-active" [routerLink]="['/signup']">Criar conta</a>
 			<hr class="mobilenav-x-rule">
 			<p class="mobilenav-x-label" *ngIf="launchpoints?.length">Apps</p>
 			<a href="{{lp.launch_url}}" *ngFor="let lp of launchpoints" target="_blank">
@@ -96,8 +96,8 @@
 	 [class.mobilenav-light]="!theme.useColorNavbar">
 		<div class="mobilenav-x-navitems">
 			<a [routerLink]="['/recipient/badges']">Backpack</a>
-			<a [routerLink]="['/recipient/badge-collections']">Collections</a>
-			<a [routerLink]="['/issuer']" *ngIf="showIssuersTab">Issuers</a>
+			<a [routerLink]="['/recipient/badge-collections']">Coleções</a>
+			<a [routerLink]="['/issuer']" *ngIf="showIssuersTab">Emissores</a>
 
 			<hr class="mobilenav-x-rule" *ngIf="launchpoints?.length">
 			<p class="mobilenav-x-label" *ngIf="launchpoints?.length">Apps</p>
@@ -110,8 +110,8 @@
 			<hr class="mobilenav-x-rule">
 			<p class="mobilenav-x-label">Account</p>
 			<a [routerLink]="['/profile/profile']">Profile</a>
-			<a [routerLink]="['/profile/app-integrations']">App Integrations</a>
-			<a [routerLink]="['/auth/logout']">Sign Out</a>
+			<a [routerLink]="['/profile/app-integrations']">App Integradas</a>
+			<a [routerLink]="['/auth/logout']">Sair</a>
 		</div>
 	</nav>
 
@@ -153,11 +153,10 @@
 			</ul>
 
 			<ul class="footer-x-links">
-				<li><a [href]="theme.termsOfServiceLink || 'https://badgr.org/missing-terms'" target="_blank">Terms of Service</a></li>
-				<li><a [href]="theme.privacyPolicyLink || 'https://badgr.org/missing-privacy-policy'" target="_blank">Privacy
-						Policy</a></li>
-				<li *ngIf="theme.showApiDocsLink === undefined || theme.showApiDocsLink"><a href="https://support.badgr.io/docs/"
-					 target="_blank">Documentation</a></li>
+				<li><a [href]="theme.termsOfServiceLink || 'http://www.serpro.gov.br'" target="_blank">Termos do Serviço</a></li>
+				<li><a [href]="theme.privacyPolicyLink || 'http://www.serpro.gov.br'" target="_blank">Politica de privacidade</a></li>
+				<li *ngIf="theme.showApiDocsLink === undefined || theme.showApiDocsLink"><a href="http://www.serpro.gov.br"
+					 target="_blank">Documentação</a></li>
 			</ul>
 
 		</div>

@@ -10,29 +10,29 @@
 				<bg-formfield-text
 					[autofocus]="true"
 					[control]="badgeCollectionForm.rawControlMap.collectionName"
-					[errorMessage]="{required: 'Please enter a collection name'}"
-						[label]="'Name'"
+					[errorMessage]="{required: 'Insira um nome de coleção'}"
+						[label]="'Nome'"
 						[maxchar]="128"
-						[sublabel]="' remaining characters'"
+						[sublabel]="' caracteres faltando'"
 					></bg-formfield-text>
 				<bg-formfield-text class="u-margin-top3x"
 					[control]="badgeCollectionForm.rawControlMap.collectionDescription"
-					[errorMessage]="{required: 'Please enter a description'}"
-					[label]="'Description'"
+					[errorMessage]="{required: 'Insira um nome de coleção'}"
+					[label]="'Descrição'"
 					[maxchar]="255"
 						[multiline]="true"
-						[sublabel]="' remaining characters'"
+						[sublabel]="' caracteres faltando'"
 				></bg-formfield-text>
 				<div class="l-flex l-flex-2x u-margin-top2x">
 					<a class="button button-secondary"
 						 [disabled-when-requesting]="true"
 						 (click)="cancelEditing()"
-					>Cancel</a>
+					>Cancela</a>
 					<button class="button" type="submit"
 								[disabled]="!! savePromise"
 								[loading-promises]="[ savePromise ]"
-								loading-message="Saving"
-					>Save</button>
+								loading-message="Salvando"
+					>Salvar</button>
 				</div>
 			</fieldset>
 		</form>

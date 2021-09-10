@@ -2,18 +2,18 @@
 <div class="topbar">
 	<div class="l-containerxaxis">
 		<div class="topbar-x-heading">
-			App Integrations
+			Integrações de APP
 		</div>
 		<div class="topbar-x-subheading">
-			You've authorized access to your {{configService.theme['serviceName'] || "Badgr"}} account for the apps and sites
-			listed below.
+			Você autorizou o acesso ao seu {{configService.theme['serviceName'] || "Badgr"}} conta para os aplicativos e sites
+			listados a baixo.
 		</div>
 	</div>
 </div>
 <div class="l-containerxaxis l-containeryaxis" *bgAwaitPromises="[ appIntegrationsSet.loadedPromise ]">
 	<!-- EMPTY STATE: Integration List -->
 	<p class="u-text" *ngIf="0 == oAuthApps.length && 0 == appIntegrationsSet.length">
-		No App Integrations found.
+		Nenhuma integração com APP.
 	</p>
 	<div class="l-grid l-grid-cards " *ngIf="oAuthApps.length > 0 || appIntegrationsSet.length > 0">
 		<!-- Integration List -->
@@ -45,7 +45,7 @@
 				<div class="integrationcard-x-desc">This application has been granted permission to sign you in using your {{configService.theme['serviceName'] || "Badgr"}} account.</div>
 			</div>
 			<div class="integrationcard-x-footer">
-				<div class="integrationcard-x-status">Authorized: <strong><time [date]="app.createdDate" format="mediumDate"></time></strong></div>
+				<div class="integrationcard-x-status">Authorized: <strong><time [date]="app.createdDate" format="dd/MM/yyyy"></time></strong></div>
 				<button class="integrationcard-x-link" type="button" [attr.aria-labelledby]="'appCardTitle-' + app.entityId"
 					(click)="revokeApp(app)">Revoke</button>
 			</div>

@@ -31,7 +31,7 @@ export class AppIntegrationListComponent extends BaseAuthenticatedRoutableCompon
 	) {
 		super(router, route, loginService);
 
-		title.setTitle(`App Integrations - ${this.configService.theme['serviceName'] || "Badgr"}`);
+		title.setTitle(`Integrações com APP - ${this.configService.theme['serviceName'] || "Badgr"}`);
 	}
 
 	get appIntegrationsSet() {
@@ -53,10 +53,10 @@ export class AppIntegrationListComponent extends BaseAuthenticatedRoutableCompon
 
 	async revokeApp(app: OAuth2AppAuthorization) {
 		if (await this.dialogService.confirmDialog.openTrueFalseDialog({
-			dialogTitle: "Revoke Access?",
-			dialogBody: `Are you sure you want to revoke access to ${app.name}?`,
-			resolveButtonLabel: "Revoke Access",
-			rejectButtonLabel: "Cancel",
+			dialogTitle: "Revogar Accesso?",
+			dialogBody: `Tem certeza de que deseja revogar o acesso a ${app.name}?`,
+			resolveButtonLabel: "Revogando",
+			rejectButtonLabel: "Cancelar",
 		})) {
 			// revoke all tokens for the app
 			Promise.all(this.oAuthManager.authorizedApps.entities.filter(t => t.clientId === app.clientId).map(t => t.revokeAccess()))

@@ -1,9 +1,9 @@
 <main>
 	<form-message></form-message>
 	<header class="l-containerxaxis topbar">
-		<h3 class="topbar-x-heading">Create Collection</h3>
+		<h3 class="topbar-x-heading">Criar coleção</h3>
 		<p class="topbar-x-subheading">
-			Use collections to organize your badges.
+			Use coleções para organizar seus emblemas.
 		</p>
 	</header>
 
@@ -18,25 +18,25 @@
 			>
 				<legend class="visuallyhidden"
 				        id="heading-add-badge-collection"
-				>Create Collection
+				>Criar coleção
 				</legend>
 				<bg-formfield-text
 					[control]="badgeCollectionForm.rawControlMap.collectionName"
-					[label]="'Collection Name'"
+					[label]="'Nome da coleção'"
 					[maxchar]=128
-					[errorMessage]="{ required:'Please enter a collection name' }"
+					[errorMessage]="{ required:'Insira um nome de coleção' }"
 					[autofocus]="true"
-					[sublabel]="' remaining characters'"
+					[sublabel]="' caracteres restantes'"
 				></bg-formfield-text>
 
 				<div class="u-margin-top2x">
 					<bg-formfield-text
 						[control]="badgeCollectionForm.rawControlMap.collectionDescription"
-						[label]="'Description'"
-						[errorMessage]="{ required: 'Please enter a description' }"
+						[label]="'Descrição'"
+						[errorMessage]="{ required: 'Por favor insira uma descrição' }"
 						[maxchar]=255
 						[multiline]="true"
-						[sublabel]="' remaining characters'"
+						[sublabel]="' caracteres restantes'"
 					></bg-formfield-text>
 				</div>
 
@@ -44,14 +44,14 @@
 					<a [routerLink]="['/recipient/badge-collections']"
 					   class="button button-secondary"
 					   [disabled-when-requesting]="true"
-					>Cancel</a>
+					>Cancelar</a>
 
 					<button type="submit"
 					        class="button"
 					        [disabled]="!! createCollectionPromise"
 					        [loading-promises]="[ createCollectionPromise ]"
-					        loading-message="Adding"
-					>Create Collection</button>
+					        loading-message="Adicionando"
+					>Criar coleção</button>
 				</div>
 			</fieldset>
 		</form>

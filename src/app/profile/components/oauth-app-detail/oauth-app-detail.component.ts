@@ -45,7 +45,7 @@ export class OAuthAppDetailComponent extends BaseAuthenticatedRoutableComponent 
 		private dialogService: CommonDialogsService
 	) {
 		super(router, route, loginService);
-		title.setTitle(`App Integrations - ${this.configService.theme['serviceName'] || "Badgr"}`);
+		title.setTitle(`Integrações com APP - ${this.configService.theme['serviceName'] || "Badgr"}`);
 
 		this.appPromise = oAuthManager.authorizedApps.loadedPromise.then(
 			list => {
@@ -71,8 +71,8 @@ export class OAuthAppDetailComponent extends BaseAuthenticatedRoutableComponent 
 
 	async revokeAccess() {
 		if (await this.dialogService.confirmDialog.openTrueFalseDialog({
-				dialogTitle: "Revoke Access?",
-				dialogBody: `Are you sure you want to revoke access to ${this.app.name}?`,
+				dialogTitle: "Revogar accesso?",
+				dialogBody: `Tem certeza de que deseja revogar o acesso a ${this.app.name}?`,
 				resolveButtonLabel: "Revoke Access",
 				rejectButtonLabel: "Cancel",
 			})) {

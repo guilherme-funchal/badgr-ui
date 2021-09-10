@@ -102,10 +102,10 @@ export class BadgeClassEditFormComponent extends BaseAuthenticatedRoutableCompon
 		.addControl('expires_duration', '', Validators.required);
 
 	durationOptions: { [key in BadgeClassExpiresDuration]: string } = {
-		days: 'Days',
-		weeks: 'Weeks',
-		months: 'Months',
-		years: 'Years'
+		days: 'Dias',
+		weeks: 'Semanas',
+		months: 'Meses',
+		years: 'Anos'
 	};
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

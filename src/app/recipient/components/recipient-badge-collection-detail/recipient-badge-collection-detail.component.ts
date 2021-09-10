@@ -95,10 +95,10 @@ export class RecipientBadgeCollectionDetailComponent extends BaseAuthenticatedRo
 
 	deleteCollection() {
 		this.dialogService.confirmDialog.openResolveRejectDialog({
-			dialogTitle: "Delete Collection",
-			dialogBody: `Are you sure you want to delete collection ${this.collection.name}?`,
-			resolveButtonLabel: "Delete Collection",
-			rejectButtonLabel: "Cancel"
+			dialogTitle: "Excluir coleção",
+			dialogBody: `Tem certeza que deseja deletar a coleção ${this.collection.name}?`,
+			resolveButtonLabel: "Excluir coleção",
+			rejectButtonLabel: "Cancela"
 		}).then(
 			() => {
 				this.collection.deleteCollection().then(

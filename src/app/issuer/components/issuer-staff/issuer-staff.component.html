@@ -12,13 +12,13 @@
 				<img *ngIf="issuer.image" class="topbar-x-image" [src]="issuer.image" alt="{{issuer.name}} logo " />
 				<img *ngIf="!issuer.image" class="topbar-x-image" [src]="issuerImagePlaceHolderUrl" alt="Default issuer image">
 				<h1 class="topbar-x-heading">
-					{{ isCurrentUserIssuerOwner ? "Manage Staff" : "View Staff" }}
+					{{ isCurrentUserIssuerOwner ? "Gerenciar equipe" : "Ver Equipe" }}
 				</h1>
 				<div class="topbar-x-subheading">
 					{{
 					isCurrentUserIssuerOwner
-					? "Manage who has access to manage and act on behalf of this issuer."
-					: "View who has access to manage and act on behalf of this issuer."
+					? "Gerenciar quem tem acesso para gerenciar e agir em nome deste emissor."
+					: "Veja quem tem acesso para gerenciar e agir em nome deste emissor."
 					}}
 				</div>
 			</div>
@@ -27,19 +27,19 @@
 
 	<div class="l-containerxaxis l-containeryaxis">
 		<div class="l-stack u-margin-bottom2x" *ngIf="isCurrentUserIssuerOwner">
-			<p class="u-text-h3-bold">Staff Members</p>
+			<p class="u-text-h3-bold">Membros da equipe</p>
 			<issuer-staff-create-dialog #issuerStaffCreateDialog></issuer-staff-create-dialog>
 			<button
 				class="button button-secondary"
-				(click)="addStaff()">Add Staff</button>
+				(click)="addStaff()">Adicionar equipe</button>
 		</div>
 
 		<table class="datatable datatable-roundheaders datatable-onlyfirstcolumntablet datatable-verticalalignmiddle">
 			<thead class="datatable-x-head">
 				<tr class="datatable-x-header">
-					<th class="datatable-x-cell">Name</th>
+					<th class="datatable-x-cell">Nome</th>
 					<th class="datatable-x-cell">ID</th>
-					<th class="datatable-x-cell">Role</th>
+					<th class="datatable-x-cell">Papel</th>
 				</tr>
 			</thead>
 			<tbody class="datatable-x-body">

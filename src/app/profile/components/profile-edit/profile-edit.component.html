@@ -12,7 +12,7 @@
 
 		<div class="l-containerxaxis">
 			<div class="topbar-x-heading">
-				Edit Profile Name
+				Editar nome de usuário
 			</div>
 		</div>
 	</div>
@@ -25,15 +25,16 @@
 		>
 			<div class="u-width-form">
 				<bg-formfield-text [control]="profileEditForm.rawControlMap.firstName"
-				                   [label]="'First Name'"
-				                   [errorMessage]="'Please enter your first name'"
+				                   [label]="'Primeiro nome'"
+
+				                   [errorMessage]="'Por favor entre com seu primeiro nom'"
 				                   class="u-margin-bottom2x forminput-large"
 				>
 				</bg-formfield-text>
 
 				<bg-formfield-text [control]="profileEditForm.rawControlMap.lastName"
-				                   [label]="'Last Name'"
-				                   [errorMessage]="'Please enter your last name'"
+				                   [label]="'Último nome'"
+				                   [errorMessage]="'Por favor insira seu sobrenome'"
 				                   class="u-margin-bottom4x forminput-large"
 				></bg-formfield-text>
 			</div>
@@ -42,13 +43,13 @@
 				<a class="button button-secondary"
 				   [routerLink]="['../profile']"
 				   [disabled-when-requesting]="true"
-				>Cancel</a>
+				>Cancelar</a>
 
 				<button type="submit"
 				        class="button"
 				        [disabled-when-requesting]="true"
 				>
-					Save
+					Salvar
 				</button>
 			</div>
 		</form>

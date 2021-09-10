@@ -47,10 +47,10 @@ import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
     <div class="mdeditor-x-tabbar">
 		<div class="mdeditor-x-tabs">
 			<div class="mdeditor-x-tab mdeditor-x-writebutton" [ngClass]="{'mdeditor-x-tab-is-active':!_preview}"
-			(click)="markdownPreview(false);">Write
+			(click)="markdownPreview(false);">Escrever
 			</div>
 			<div class="mdeditor-x-tab mdeditor-x-previewbutton" [ngClass]="{'mdeditor-x-tab-is-active':_preview}"
-			(click)="markdownPreview(true);">Preview
+			(click)="markdownPreview(true);">Previsão
 			</div>
 		</div>
 		<div class="mdeditor-x-help">
@@ -58,7 +58,7 @@ import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 				<button class="buttonicon buttonicon-link" type="button" (click)="openMarkdownHintsDialog()">
 					<svg class="icon l-flex-shrink0" icon="icon_markdown"></svg>
 				</button>
-				<button (click)="openMarkdownHintsDialog()" type="button" class="u-text-link-small u-hidden-maxmobilelarge">Markdown Supported</button>
+				<button (click)="openMarkdownHintsDialog()" type="button" class="u-text-link-small u-hidden-maxmobilelarge">Marcações suportadas</button>
 			</div>
 		</div>
     </div>

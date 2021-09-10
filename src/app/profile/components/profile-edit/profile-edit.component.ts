@@ -25,8 +25,8 @@ export class ProfileEditComponent extends BaseAuthenticatedRoutableComponent imp
 
 	profileLoaded: Promise<unknown>;
 	crumbs: LinkEntry[] = [
-		{title: 'Profile', routerLink: ['/profile']},
-		{title: 'Edit Profile', routerLink: ['/profile/edit']},
+		{title: 'Perfil', routerLink: ['/profile']},
+		{title: 'Editar Perfil', routerLink: ['/profile/edit']},
 	];
 
 	constructor(
@@ -41,12 +41,12 @@ export class ProfileEditComponent extends BaseAuthenticatedRoutableComponent imp
 		protected dialogService: CommonDialogsService
 ) {
 		super(router, route, sessionService);
-		title.setTitle(`Profile - Edit - ${this.configService.theme['serviceName'] || "Badgr"}`);
+		title.setTitle(`Perfil - Editar - ${this.configService.theme['serviceName'] || "Badgr"}`);
 
 		this.profileLoaded = profileManager.userProfilePromise.then(
 			profile => this.profile = profile,
 			error => this.messageService.reportAndThrowError(
-				"Failed to load userProfile", error
+				"Falha ao carregar perfil", error
 			)
 		);
 

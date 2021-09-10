@@ -207,7 +207,7 @@ export class ProfileComponent extends BaseAuthenticatedRoutableComponent impleme
 	clickMakePrimary(ev: MouseEvent, email: UserProfileEmail) {
 		email.makePrimary().then(
 			() => {
-				this.messageService.reportMajorSuccess(`${email.email} is now your primary email.`);
+				this.messageService.reportMajorSuccess(`${email.email} é o seu email primário.`);
 				this.profile.emails.updateList();
 			},
 			error => this.messageService.reportAndThrowError(`Unable to set ${email.email} to primary email: ${BadgrApiFailure.from(error).firstMessage}`, error)
@@ -216,7 +216,7 @@ export class ProfileComponent extends BaseAuthenticatedRoutableComponent impleme
 
 	clickResendVerification(ev: MouseEvent, email: UserProfileEmail) {
 		email.resendVerificationEmail().then(
-			() => this.messageService.reportMajorSuccess(`Confirmation re-sent to ${email.email}`),
+			() => this.messageService.reportMajorSuccess(`Confirmação re-enviada para ${email.email}`),
 			error => {
 				if (error.response.status === 429) {
 					this.messageService.reportAndThrowError(`Failed to resend confirmation to ${email.email}: ${error.response._body}`, error);

@@ -7,15 +7,14 @@
 				<bg-breadcrumbs [linkentries]="breadcrumbLinkEntries"></bg-breadcrumbs>
 			</div>
 			<div class="topbar-x-heading">
-				Award Badge
+				Premiar com Badge
 			</div>
 			<div class="topbar-x-subheading">
-				Award badges to individuals below, or
+				Atribuir badge aos indivíduos abaixo, ou
 				<a class="u-text"
 				   [routerLink]="['/issuer/issuers', issuerSlug, 'badges', badgeSlug, 'bulk-import']"
-				>click here to
-					bulk award</a>
-				to multiple recipients at once.
+				>clique aqui para premiar em massa</a>
+				para vários destinatários de uma vez.
 			</div>
 		</div>
 	</div>
@@ -34,31 +33,28 @@
 				<h3 class="formsection-x-title u-text-dark2"
 				    id="heading-recipientinformation"
 				>
-					Recipient Information
+					Informação recebedor
 				</h3>
 				<div class="formsection-x-help">
-					<h3 class="u-text-body-bold">Badge Awarding</h3>
+					<h3 class="u-text-body-bold">Badge de premiação</h3>
 					<p class="u-text u-margin-top1x u-margin-bottom2x">
-						You can award a badge via a recipient's email address, url, or telephone number.
+						Você pode conceder um badge por meio do endereço de e-mail, url ou número de telefone do destinatário.
 					</p>
 					<a href="https://support.badgr.io/pages/viewpage.action?pageId=2981918"
 					   target="_blank"
 					   class="u-text-outlink"
-					>Learn
-						More
-						<svg icon="icon_external_link"></svg>
+					>Saiba mais<svg icon="icon_external_link"></svg>
 					</a>
 				</div>
 				<div class="formsection-x-body">
 					<div class="forminput">
-						<label class="forminput-x-label">Recipient Name (optional)</label>
+						<label class="forminput-x-label">Nome recebedor (opcional)</label>
 						<bg-formfield-text [control]="issueForm.rawControlMap.recipientprofile_name"
-						                   ariaLabel="Recipient Name (optional)"
+						                   ariaLabel="Nome recebedor (opcional)"
 						></bg-formfield-text>
 						<p class="u-text u-text-small u-text-dark4 u-margin-top1x u-margin-bottom2x">
-							<strong>Note</strong>
-							: The Recipient Name will appear in the awarded badge
-							in plain text.
+							<strong>Nota</strong>
+							: O nome do destinatário aparecerá no emblema premiado em texto simples.
 						</p>
 					</div>
 					<div class="forminput forminput-full">
@@ -74,9 +70,9 @@
 							                   [autofocus]="true"
 							                   [fieldType]="recipientIdentifierFieldType"
 							></bg-formfield-text>
-							<div class="u-text-error u-text-small" *ngIf="idError==='invalidEmail'">Please enter a valid email.</div>
-							<div class="u-text-error u-text-small" *ngIf="idError==='invalidUrl'">Please enter a valid URL.</div>
-							<div class="u-text-error u-text-small" *ngIf="idError==='invalidTelephone'">Please enter a valid phone number.</div>
+							<div class="u-text-error u-text-small" *ngIf="idError==='invalidEmail'">Por favorm entre com um email válido.</div>
+							<div class="u-text-error u-text-small" *ngIf="idError==='invalidUrl'">Por favor entre com uma URL válida.</div>
+							<div class="u-text-error u-text-small" *ngIf="idError==='invalidTelephone'">Por favor entre com um telefone válido.</div>
 						</div>
 					</div>
 					<div class="l-formsection-x-checkbox"
@@ -90,7 +86,7 @@
 							       type="checkbox"
 							       [formControl]="issueForm.rawControlMap.notify_earner"
 							>
-							<span class="checkbox-x-text">Notify Recipient by Email</span>
+							<span class="checkbox-x-text">Notificar o destinatário por e-mail</span>
 						</label>
 					</div>
 				</div>
@@ -104,7 +100,7 @@
 			>
 				<div class="formsection-x-title">
 					<h2>
-						Narrative
+						Narrativa
 						<span>(Optional)</span>
 					</h2>
 					<button class="buttonicon buttonicon-link"
@@ -117,9 +113,9 @@
 				</div>
 
 				<div class="formsection-x-help">
-					<h3 class="u-text-body-bold">What is Narrative?</h3>
+					<h3 class="u-text-body-bold">O que é narrativa?</h3>
 					<p class="u-text u-margin-top1x u-margin-bottom2x">
-						The narrative is an overall description of the achievement related to the badge.
+						A narrativa é uma descrição geral da conquista relacionada ao distintivo.
 					</p>
 					<a href="https://support.badgr.io/pages/viewpage.action?pageId=2981918"
 					   class="u-text-outlink"
@@ -130,7 +126,7 @@
 				<div class="formsection-x-body">
 					<bg-formfield-markdown class="l-formsection-x-inputoffset"
 					                       [control]="issueForm.rawControlMap.narrative"
-					                       label="How did the recipient earn this badge?"
+					                       label="Como o destinatário ganhou este emblema?"
 					></bg-formfield-markdown>
 				</div>
 			</div>
@@ -143,8 +139,8 @@
 			>
 				<div class="formsection-x-title">
 					<h2>
-						Evidence
-						<span>(Optional)</span>
+						Evidencia
+						<span>(Opcional)</span>
 					</h2>
 					<button class="buttonicon buttonicon-link"
 					        (click)="evidenceEnabled = false"
@@ -157,12 +153,12 @@
 				<div class="formsection-x-help">
 
 					<h3 class="u-text-body-bold">
-						What's Evidence?
+						Qual a evidência?
 					</h3>
 					<p class="u-text u-margin-top1x u-margin-bottom2x">
-						Evidence is submitted proof that an earner meets the criteria for a badge they are applying for. This
-						can be in the form of a narrative that describes the evidence and process of achievement, and/or a URL
-						of a web page presenting the evidence of achievement.
+						São apresentadas evidências de que um ganhador atende aos critérios para um distintivo ao qual está se inscrevendo. Esse
+                                                pode ser na forma de uma narrativa que descreve a evidência e o processo de realização e / ou uma URL
+                                                de uma página da web apresentando as evidências de realização.
 					</p>
 					<a href="https://support.badgr.io/pages/viewpage.action?pageId=2981918"
 					   class="u-text-outlink"
@@ -173,7 +169,7 @@
 				<div class="formsection-x-body">
 					<ng-container *ngFor="let evidence of issueForm.controls.evidence_items.controls; let i=index">
 						<div class="l-flex l-flex-1x l-flex-justifybetween u-margin-bottom2x">
-							<h3 class="u-text-body-bold u-text-dark1">Evidence {{i + 1}}</h3>
+							<h3 class="u-text-body-bold u-text-dark1">Evidencia {{i + 1}}</h3>
 							<button class="u-text-link"
 							        aria-labelledby="heading-nestedevidence"
 							        *ngIf="issueForm.controls.evidence_items.length > 1"
@@ -188,10 +184,10 @@
 						></bg-formfield-markdown>
 						<bg-formfield-text class="u-margin-top2x u-margin-bottom6x"
 						                   [control]="evidence.rawControlMap.evidence_url"
-						                   label="URL to Evidence Page"
+						                   label="URL da página da evidencia"
 						                   fieldType="url"
 						                   [urlField]="true"
-						                   errorMessage="Please enter a valid URL"
+						                   errorMessage="Entre com uma URL válida"
 						></bg-formfield-text>
 					</ng-container>
 
@@ -200,7 +196,7 @@
 						        type="button"
 						        (click)="addEvidence()"
 						>
-							Add Additional Evidence
+							Adicionar Evidencia Adicional
 						</button>
 					</div>
 				</div>
@@ -214,8 +210,8 @@
 			>
 				<div class="formsection-x-title">
 					<h2>
-						Expiration
-						<span>(Optional)</span>
+						Expiração
+						<span>(Opcional)</span>
 					</h2>
 					<button class="buttonicon buttonicon-link"
 					        (click)="expirationEnabled = false"
@@ -228,14 +224,14 @@
 
 
 				<div class="formsection-x-help">
-					<h3 class="u-text-body-bold">What is Expiration?</h3>
+					<h3 class="u-text-body-bold">O que é expiração?</h3>
 					<p class="u-text u-margin-top1x u-margin-bottom2x">
-						This Badge is set to expire. You can edit the expiration date or remove this section if you don't want this
-						award to expire.
+						Este badge está definido para expirar. Você pode editar a data de expiração ou remover esta seção se não quiser
+                                                que expire.
 					</p>
 					<a href="https://support.badgr.io/pages/viewpage.action?pageId=2981918"
 					   class="u-text-outlink"
-					>Learn More
+					>Saiba mais
 						<svg icon="icon_external_link"></svg>
 					</a>
 				</div>
@@ -245,14 +241,14 @@
 					<div *ngIf="!defaultExpiration || expirationDateEditable"
 					     class="formfield"
 					>
-						<bg-formfield-text label="Expiration Date"
+						<bg-formfield-text label="Data expiração"
 															 id="date"
 															 fieldType="date"
 						                   [control]="issueForm.rawControlMap.expires"
 						                   ariaLabel="Expiration date"
 						                   [errorMessage]="'Please enter a date in the format YYYY/mm/dd'"
 						></bg-formfield-text>
-						<div class="u-text-error u-text-small" *ngIf="dateError">Please enter a date in the format YYYY-mm-dd.</div>
+						<div class="u-text-error u-text-small" *ngIf="dateError">Insira uma data no formato AAAA-mm-dd.</div>
 					</div>
 					<div *ngIf="defaultExpiration && !expirationDateEditable"
 					     class="forminput"
@@ -261,16 +257,16 @@
 						<label class="forminput-x-label"
 						       for="date"
 						>
-							Expiration Date
+							Data de expiração
 						</label>
 						<h1 class="u-text-h3-bold">
-							<strong>{{defaultExpiration|date}}</strong>
+							<!-- <strong>{{defaultExpiration|date}}</strong> -->
 							<button class="u-text-link-small u-display-inline u-margin-left1x"
 							        type="button"
 							        tabindex="0"
 							        (click)="expirationDateEditable = true"
 							>
-								Edit
+								Editar
 							</button>
 						</h1>
 
@@ -286,7 +282,7 @@
 				<h3 class="formsection-x-title u-text-dark2"
 				    id="heading-addoptionaldetails"
 				>
-					Add Optional Details
+					Adicionar detalhes opcionais
 				</h3>
 
 				<div class="formsection-x-body">
@@ -298,7 +294,7 @@
 								></svg>
 								<p class="u-text-body-semibold"
 								   [ngClass]="{'u-text-dark2': !narrativeEnabled, 'u-text-dark4':narrativeEnabled}"
-								>Narrative</p>
+								>Narrativa</p>
 							</div>
 							<button class="u-text-link-small"
 							        [class.u-text-light4]="narrativeEnabled"
@@ -306,7 +302,7 @@
 							        (click)="narrativeEnabled = true"
 							        type="button"
 							>
-								{{ narrativeEnabled ? "Added" : "Add" }}
+								{{ narrativeEnabled ? "Adicionado" : "Adicionar" }}
 							</button>
 						</li>
 
@@ -317,7 +313,7 @@
 								></svg>
 								<p class="u-text-body-semibold"
 								   [ngClass]="{'u-text-dark2': !evidenceEnabled, 'u-text-dark4':evidenceEnabled}"
-								>Evidence</p>
+								>Evidência</p>
 							</div>
 							<button class="u-text-link-small"
 							        [class.u-text-light4]="evidenceEnabled"
@@ -325,7 +321,7 @@
 							        (click)="enableEvidence()"
 							        type="button"
 							>
-								{{ evidenceEnabled ? "Added" : "Add" }}
+								{{ evidenceEnabled ? "Adicionado" : "Adiciona" }}
 							</button>
 						</li>
 
@@ -336,7 +332,7 @@
 								></svg>
 								<p class="u-text-body-semibold"
 								   [ngClass]="{'u-text-dark2': !expirationEnabled, 'u-text-dark4':expirationEnabled}"
-								>Expiration</p>
+								>Expiração</p>
 							</div>
 							<button class="u-text-link-small"
 							        [class.u-text-light4]="expirationEnabled"
@@ -344,7 +340,7 @@
 							        (click)="toggleExpiration()"
 							        type="button"
 							>
-								{{ expirationEnabled ? "Added" : "Add" }}
+								{{ expirationEnabled ? "Adicionado" : "Adiciona" }}
 							</button>
 						</li>
 					</ul>
@@ -360,7 +356,7 @@
 				   class="button button-secondary"
 				   [disabled-when-requesting]="true"
 				>
-					Cancel
+					Cancelar
 				</a>
 				<button type="submit"
 				        class="button"
@@ -368,7 +364,7 @@
 				        [loading-promises]="[ issueBadgeFinished ]"
 				        loading-message="Issuing"
 				>
-					Award Badge
+					Criar
 				</button>
 			</div>
 		</form>

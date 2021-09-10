@@ -29,8 +29,8 @@ export class ChangePasswordComponent extends BaseRoutableComponent {
 		'password': '',
 	};
 	crumbs: LinkEntry[] = [
-		{title: 'Profile', routerLink: ['/profile']},
-		{title: 'Change Password', routerLink: ['/profile/change-password']},
+		{title: 'Perfil', routerLink: ['/profile']},
+		{title: 'Mudar senha', routerLink: ['/profile/change-password']},
 	];
 
 	constructor(
@@ -45,7 +45,7 @@ export class ChangePasswordComponent extends BaseRoutableComponent {
 	) {
 		super(router, route);
 
-		title.setTitle(`Change Password - ${this.configService.theme['serviceName'] || "Badgr"}`);
+		title.setTitle(`Mudar senha - ${this.configService.theme['serviceName'] || "Badgr"}`);
 
 		this.profileManager.userProfilePromise
 			.then(profile => this.profile = profile);

@@ -78,13 +78,13 @@ export class BadgeClassIssueBulkAwardComponent extends BaseAuthenticatedRoutable
 				.then((badgeClass) => {
 					this.badgeClass = badgeClass;
 					this.title.setTitle(
-						`Bulk Award Badge - ${badgeClass.name} - ${this.configService.theme['serviceName'] || 'Badgr'}`
+						`Premiar com badge em massa - ${badgeClass.name} - ${this.configService.theme['serviceName'] || 'Badgr'}`
 					);
 					this.breadcrumbLinkEntries = [
 						{ title: 'Issuers', routerLink: [ '/issuer' ] },
 						{ title: issuer.name, routerLink: [ '/issuer/issuers', this.issuerSlug ] },
 						{ title: badgeClass.name, routerLink: [ '/issuer/issuers', this.issuerSlug, 'badges', badgeClass.slug ] },
-						{ title: 'Bulk Award Badge' }
+						{ title: 'Premiar em massa' }
 					];
 				});
 		});
