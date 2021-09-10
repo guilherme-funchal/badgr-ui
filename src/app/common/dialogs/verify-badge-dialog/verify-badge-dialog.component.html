@@ -105,8 +105,8 @@
 										<dd class="u-margin-bottom2x"
 												[ngSwitch]="expiryState"
 										>
-											<ng-container *ngSwitchCase="EXPIRY_STATES.EXPIRED"> Expired</ng-container>
-											<ng-container *ngSwitchCase="EXPIRY_STATES.NEVER_EXPIRES"> Does not expire</ng-container>
+											<ng-container *ngSwitchCase="EXPIRY_STATES.EXPIRED"> Expirado</ng-container>
+											<ng-container *ngSwitchCase="EXPIRY_STATES.NEVER_EXPIRES"> Não expira</ng-container>
 											<ng-container *ngSwitchCase="EXPIRY_STATES.NOT_EXPIRED">
 												<time [date]="badgeAssertion?.expires"
 															format="dd/MM/yyyy"
@@ -125,10 +125,10 @@
 				<a class="u-text-outlink"
 				   [href]="verifyUrl"
 				>
-					Independently Verify Badge
+					Verificação independente de badge
 					<svg icon="icon_external_link"></svg>
 				</a>
-				<button class="button" (click)="closeDialog()">Done</button>
+				<button class="button" (click)="closeDialog()">Feito</button>
 			</div>
 
 		</div>
