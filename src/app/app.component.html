@@ -13,8 +13,7 @@
 		<ng-template [ngIf]="!loggedIn">
 			<nav class="navbar-x-items">
 				<div class="navbar-x-navitems">
-					<a [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/auth/login']">Sign
-						In</a>
+					<a [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/auth/login']">Login</a>
 					<a *ngIf="!features.disableRegistration" [class.navitem-light]="!theme.useColorNavbar" class="navitem"
 						 routerLinkActive="navitem-is-active" [routerLink]="['/signup']">Criar conta</a>
 				</div>
