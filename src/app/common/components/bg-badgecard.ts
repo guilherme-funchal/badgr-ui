@@ -25,16 +25,16 @@ declare function require(path: string): string;
 		</div>
 		<div class="badgecard-x-footer">
 			<div class="badgecard-x-date">
-				<time [date]="badgeIssueDate" format="mediumDate"></time>
+				<time [date]="badgeIssueDate" format="dd/MM/yyyy hh:mm"></time>
 			</div>
 
 			<!-- Show Verify or Share Button unless public -->
 			<button class="badgecard-x-sharelink" *ngIf="!verifyUrl && !public && (mostRelevantStatus !== 'pending')"
 					(click)="shareClicked.emit($event)">
-				Share
+				Compartilhar
 			</button>
 			<a class="badgecard-x-sharelink" *ngIf="verifyUrl" [href]="verifyUrl">
-				Verify
+				Verificar
 			</a>
 		</div>
 	`

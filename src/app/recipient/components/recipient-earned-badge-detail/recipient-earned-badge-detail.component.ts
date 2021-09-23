@@ -102,11 +102,11 @@ export class RecipientEarnedBadgeDetailComponent extends BaseAuthenticatedRoutab
 		}).then(
 			() => this.recipientBadgeManager.deleteRecipientBadge(badge).then(
 				() => {
-					this.messageService.reportMajorSuccess(`${badge.badgeClass.name} has been deleted`, true);
+					this.messageService.reportMajorSuccess(`${badge.badgeClass.name} foi excluído`, true);
 					this.router.navigate([ '/recipient']);
 				},
 				error => {
-					this.messageService.reportHandledError(`Failed to delete ${badge.badgeClass.name}`, error);
+					this.messageService.reportHandledError(`Falha ao excluir ${badge.badgeClass.name}`, error);
 				}
 			),
 			() => {}

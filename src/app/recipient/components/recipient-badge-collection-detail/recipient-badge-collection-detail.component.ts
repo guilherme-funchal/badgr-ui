@@ -162,7 +162,7 @@ export class RecipientBadgeCollectionDetailComponent extends BaseAuthenticatedRo
 
 export function shareCollectionDialogOptionsFor(collection: RecipientBadgeCollection): ShareSocialDialogOptions {
 	return {
-		title: "Share Collection",
+		title: "Compartilhe Coleção",
 		shareObjectType: "BadgeCollection",
 		shareUrl: collection.shareUrl,
 		shareTitle: collection.name,
