@@ -11,14 +11,14 @@
 			class="u-text-h3-bold"
 			id="heading-form"
 		>
-			Create a {{ theme.serviceName || "Badgr" }} Account
+			Criar a conta de  {{ theme.serviceName || "Badgr" }}
 		</h3>
 		<p
 			class="u-text u-text-body u-responsivemargin-top1x2x"
 			*ngIf="! oAuthManager.currentAuthorization"
 		>
-			Already have an account?
-			<a [routerLink]="['/auth/login']">Sign in</a>.
+			Você já tem conta?
+			<a [routerLink]="['/auth/login']">Login</a>.
 		</p>
 		<p
 			class="u-text u-text-body u-responsivemargin-top1x2x"
@@ -49,7 +49,7 @@
 				(click)="sessionService.initiateUnauthenticatedExternalAuth(provider)"
 				class="socialbutton"
 				[style.backgroundColor]="provider.color">
-				<div class="visuallyhidden">Access with {{provider.label}}</div>
+				<div class="visuallyhidden">Acesso com {{provider.label}}</div>
 				<img [src]="sanitize(provider.imgSrc)" alt="">
 			</button>
 		</div>
@@ -79,7 +79,7 @@
 					class="visuallyhidden"
 					id="heading-badgrsignup2"
 				>
-					Sign up with {{ theme.serviceName || "Badgr"}} by providing your information
+					Cadastre-se com {{ theme.serviceName || "Badgr"}} fornecendo suas informações
 				</legend>
 
 				<bg-formfield-text
@@ -87,41 +87,41 @@
 					[control]="signupForm.rawControlMap.username"
 					[label]="'Email'"
 					fieldType="email"
-					[errorMessage]="'Please enter a valid email address'"
+					[errorMessage]="'Por favor insira um email válido'"
 					[autofocus]="true"
 				></bg-formfield-text>
 
 				<bg-formfield-text
 					class="u-margin-bottom2x"
 					[control]="signupForm.rawControlMap.firstName"
-					[label]="'First Name'"
-					[errorMessage]="'Please enter a first name'"
+					[label]="'Primeiro nome'"
+					[errorMessage]="'Por favor insira o primeiro nome'"
 				></bg-formfield-text>
 
 				<bg-formfield-text
 					class="u-margin-bottom2x"
 					[control]="signupForm.rawControlMap.lastName"
-					[label]="'Last Name'"
-					[errorMessage]="'Please enter a last name'"
+					[label]="'Último nome'"
+					[errorMessage]="'Por favor insira o último nome'"
 				></bg-formfield-text>
 
 				<bg-formfield-text
 					class="u-margin-bottom2x"
 					[control]="signupForm.rawControlMap.password"
-					[label]="'Password (Must be at least 8 characters)'"
+					[label]="'Senha (Deve ser com 8 caracteres)'"
 					fieldType="password"
 					[errorMessage]="{
-						required: 'Please enter a password',
-						minlength: 'Password must be at least 8 characters'
+						required: 'Insira a senha',
+						minlength: 'Senha deve ter com 8 caracteres'
 					}"
 				></bg-formfield-text>
 
 				<bg-formfield-text
 					[control]="signupForm.rawControlMap.passwordConfirm"
-					[label]="'Confirm Password'"
+					[label]="'Confirme a senha'"
 					fieldType="password"
 					[errorMessage]="{
-						required: 'Please confirm your password',
+						required: 'Por favor confirme a senha',
 						passwordsMatch: 'Passwords do not match'
 					}"
 				></bg-formfield-text>
@@ -140,17 +140,17 @@
 					>
 					<span class="checkbox-x-text">
 						<strong>
-							I have read and agree to the
+							Eu li e concordo com o
 							<a
 								target="_blank"
 								[href]="theme.termsOfServiceLink || 'https://badgr.org/missing-terms'"
-							>Terms of Service</a>.
+							>Termo do Serviço</a>.
 							</strong>
 							<div
 								*ngIf="signupForm.rawControlMap.agreedTermsService.dirty && !signupForm.rawControlMap.agreedTermsService.valid"
 								class="checkbox-x-errortext"
 							>
-								Please read and agree to the Terms of Service if you want to continue.
+								Leia e concorde com os Termos de Serviço se quiser continuar.
 							</div>
 						</span>
 				</label>
@@ -166,10 +166,10 @@
 						[formControl]="signupForm.rawControlMap.marketingOptIn"
 					>
 					<span class="checkbox-x-text">
-                        <strong>Yes,</strong>
-                        I would like to receive email updates about products &amp;
-						services, upcoming webinars, news and events from {{configService.theme['serviceName'] || "Badgr"}}.
-                    </span>
+                        <strong>Sim,</strong>
+                        Eu gostaria de receber atualizações por e-mail sobre produtos &amp;
+						serviços, próximos webinars, notícias e eventos.
+						</span>
 				</label>
 				<div class="l-stack l-stack-2x l-stack-buttons u-margin-top3x">
 					<button class="button button-secondary"
@@ -182,8 +182,8 @@
 					        type="submit"
 					        [disabled]="!! signupFinished"
 					        [loading-promises]="[ signupFinished ]"
-					        loading-message="Signing Up..."
-					>Create Account
+					        loading-message="Inscrever-se..."
+					>Criar conta
 					</button>
 					<!-- TO DO: Add a destination -->
 					<!--<a class="u-text-link-small" href="#"
