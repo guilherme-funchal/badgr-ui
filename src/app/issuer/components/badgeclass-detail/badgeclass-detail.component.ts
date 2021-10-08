@@ -182,15 +182,15 @@ export class BadgeClassDetailComponent extends BaseAuthenticatedRoutableComponen
 		if (this.activeRecipientCount === 0) {
 
 			this.confirmDialog.openResolveRejectDialog({
-				dialogTitle: "Warning",
-				dialogBody: `Are you sure you want to delete the badge <strong>${this.badgeClass.name}</strong>?`,
-				resolveButtonLabel: "Delete Badge",
-				rejectButtonLabel: "Cancel",
+				dialogTitle: "Cuidado",
+				dialogBody: `Tem certeza de que deseja excluir o badge Teste? <strong>${this.badgeClass.name}</strong>?`,
+				resolveButtonLabel: "Excluir Badge",
+				rejectButtonLabel: "Cancelar",
 			}).then(() => {
 
 				this.badgeManager.removeBadgeClass(this.badgeClass).then(
 					(success) => {
-						this.messageService.reportMajorSuccess(`Removed badge class: ${this.badgeClass.name}.`);
+						this.messageService.reportMajorSuccess(`Badge removido class: ${this.badgeClass.name}.`);
 						this.router.navigate([ 'issuer/issuers', this.issuerSlug ]);
 					},
 					(error) => {

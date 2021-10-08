@@ -108,20 +108,20 @@ export class IssuerDetailComponent extends BaseAuthenticatedRoutableComponent im
 		this.dialogService.confirmDialog.openResolveRejectDialog({
 			dialogTitle: "Delete Issuer",
 			dialogBody: (this.badges.length)
-				?'This issuer has active badges! Please delete them before trying to delete the issuer.'
-				:`Are you sure you want to delete issuer ${this.issuer.name}?`,
-			resolveButtonLabel: "Delete Issuer",
-			rejectButtonLabel: "Cancel",
+				?'Este emissor tem badges ativos! Exclua-os antes de tentar excluir o emissor.'
+				:`Tem certeza de que deseja excluir o emissor ${this.issuer.name}?`,
+			resolveButtonLabel: "Excluir emissor",
+			rejectButtonLabel: "Cancelar",
 			disableConfirm: !!this.badges.length
 		}).then(
 			() => {
 				this.issuer.delete().then(
 					() => {
 						this.issuerManager.issuersList.invalidateList();
-						this.messageService.reportMinorSuccess(`Deleted issuer '${this.issuer.name}'`);
+						this.messageService.reportMinorSuccess(`Excluir emissor '${this.issuer.name}'`);
 						this.router.navigate(['/issuer/issuers']);
 					},
-					error => this.messageService.reportHandledError(`Failed to delete issuer`, error)
+					error => this.messageService.reportHandledError(`Falha ao excluir o emissor`, error)
 				);
 			},
 			() => {}
