@@ -54,13 +54,13 @@ export class RecipientBadgeCollectionListComponent extends BaseAuthenticatedRout
 
 		if (collection.published) {
 			collection.save().then(
-				success => this.messageService.reportMinorSuccess(`Published collection ${collection.name} successfully`),
-				failure => this.messageService.reportHandledError(`Failed to publish collection ${collection.name}`, failure)
+				success => this.messageService.reportMinorSuccess(`Coleção puvlicada ${collection.name} com sucesso`),
+				failure => this.messageService.reportHandledError(`Falha ao publicar coleção ${collection.name}`, failure)
 			);
 		} else {
 			collection.save().then(
-				success => this.messageService.reportMinorSuccess(`Unpublished collection ${collection.name} successfully`),
-				failure => this.messageService.reportHandledError(`Failed to un-publish collection ${collection.name}`, failure)
+				success => this.messageService.reportMinorSuccess(`Coleção não publicada ${collection.name} com sucesso`),
+				failure => this.messageService.reportHandledError(`Falha ao cancelar a publicação da coleção ${collection.name}`, failure)
 			);
 		}
 	}

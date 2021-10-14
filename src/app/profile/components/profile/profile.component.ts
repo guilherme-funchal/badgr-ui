@@ -126,12 +126,12 @@ export class ProfileComponent extends BaseAuthenticatedRoutableComponent impleme
 			rejectButtonLabel: "Cancel"
 		})) {
 			socialAccount.remove().then(
-				() => this.messageService.reportMinorSuccess(`Removed ${socialAccount.fullLabel} from your account`),
+				() => this.messageService.reportMinorSuccess(`Removido ${socialAccount.fullLabel} da sua conta`),
 				error => {
 					if (error.response.status === 403) {
-						this.messageService.reportHandledError(`Failed to remove ${socialAccount.fullLabel} from your account: ${error.response._body}`);
+						this.messageService.reportHandledError(`Falha ao remover ${socialAccount.fullLabel} da sua conta: ${error.response._body}`);
 					} else {
-						this.messageService.reportHandledError(`Failed to remove ${socialAccount.fullLabel} from your account: ${BadgrApiFailure.from(error).firstMessage}`);
+						this.messageService.reportHandledError(`Falha ao remover ${socialAccount.fullLabel} da sua conta: ${BadgrApiFailure.from(error).firstMessage}`);
 					}
 				}
 			);
@@ -187,9 +187,9 @@ export class ProfileComponent extends BaseAuthenticatedRoutableComponent impleme
 		} else {
 			this.dialogService.confirmDialog.openResolveRejectDialog({
 				dialogTitle: "Delete Email",
-				dialogBody: `All badges associated with this email address will be removed. Are you sure you want to delete email ${email.email}`,
-				resolveButtonLabel: "Confirm remove",
-				rejectButtonLabel: "Cancel"
+				dialogBody: `Todos os badges associados a este endereço de e-mail serão removidos. Tem certeza que deseja deletar e-mail ${email.email}`,
+				resolveButtonLabel: "Confirma remoção",
+				rejectButtonLabel: "Cancela"
 			}).then(
 				() => this.clickRemove(ev, email), // success - clicked confirm
 				cancel => void 0 // fail - clicked cancel
@@ -199,7 +199,7 @@ export class ProfileComponent extends BaseAuthenticatedRoutableComponent impleme
 
 	clickRemove(ev: MouseEvent, email: UserProfileEmail) {
 		email.remove().then(
-			() => this.messageService.reportMinorSuccess(`You have successfully removed ${email.email}`),
+			() => this.messageService.reportMinorSuccess(`Você removeu com sucesso ${email.email}`),
 			error => this.messageService.reportHandledError(`Unable to remove ${email.email}: ${BadgrApiFailure.from(error).firstMessage}`, error)
 		);
 	}

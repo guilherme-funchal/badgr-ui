@@ -33,10 +33,10 @@ export class ResetPasswordComponent extends BaseRoutableComponent {
 	) {
 		super(router, route);
 
-		title.setTitle(`Reset Password - ${this.configService.theme['serviceName'] || "Badgr"}`);
+		title.setTitle(`Reseta Senha - ${this.configService.theme['serviceName'] || "Badgr"}`);
 
 		if (! this.resetToken) {
-			this._messageService.reportHandledError("No reset token provided. Please try the reset link again.");
+			this._messageService.reportHandledError("Nenhum token de redefinição fornecido. Por favor, tente o link de redefinição novamente.");
 		}
 	}
 

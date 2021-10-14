@@ -72,7 +72,7 @@ export class ChangePasswordComponent extends BaseRoutableComponent {
 		)
 			.then(
 				() => {
-					this._messageService.reportMajorSuccess('Your password has been changed successfully.', true);
+					this._messageService.reportMajorSuccess('Sua senha foi alterada com sucesso.', true);
 					this.router.navigate([ "/profile/profile" ]);
 				},
 				(err) => {

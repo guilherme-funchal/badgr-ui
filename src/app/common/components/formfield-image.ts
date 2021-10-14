@@ -44,7 +44,7 @@ import {throwExpr} from '../util/throw-expr';
 				<img [src]="imageDataUrl" alt="">
 				<p class="u-text-body">
 					{{ imageName }}
-					<button (click)="imageLabel.click()" type="button" class="u-text-link">Change Image</button>
+					<button (click)="imageLabel.click()" type="button" class="u-text-link">Mudar imagem</button>
 				</p>
 			</div>
 

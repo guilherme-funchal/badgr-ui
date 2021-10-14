@@ -103,7 +103,7 @@ export class AddBadgeDialogComponent extends BaseDialog {
 			this.badgeUploadPromise = this.recipientBadgeManager
 				.createRecipientBadge(formState)
 				.then(instance => {
-					this.messageService.reportMajorSuccess("Badge successfully imported.");
+					this.messageService.reportMajorSuccess("Badge importado.");
 					this.closeDialog();
 				})
 				.catch(err => {

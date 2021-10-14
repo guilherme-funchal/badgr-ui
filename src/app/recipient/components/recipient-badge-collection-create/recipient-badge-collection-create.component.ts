@@ -56,9 +56,9 @@ export class RecipientBadgeCollectionCreateComponent extends BaseAuthenticatedRo
 			collectionForCreation
 		).then((collection) => {
 			this.router.navigate(['/recipient/badge-collections/collection', collection.slug]);
-			this.messageService.reportMinorSuccess('Collection created successfully.');
+			this.messageService.reportMinorSuccess('Coleção criada com sucesso.');
 		}, error => {
-			this.messageService.reportHandledError('Unable to create collection', error);
+			this.messageService.reportHandledError('Incapaz de criar coleção', error);
 		}).then(() => this.createCollectionPromise = null);
 	}
 }

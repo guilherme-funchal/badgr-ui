@@ -78,9 +78,9 @@ export class OAuthAppDetailComponent extends BaseAuthenticatedRoutableComponent 
 			})) {
 			Promise.all(this.appTokens.map(app => app.revokeAccess()))
 				.then(
-					() => this.messageService.reportMajorSuccess(`Revoked access to ${this.app.name}`, true),
+					() => this.messageService.reportMajorSuccess(`Revogado o acessor a ${this.app.name}`, true),
 					error => this.messageService.reportAndThrowError(
-						`Failed to revoke access to ${this.app.name}`,
+						`Falha ao revogar o acesso a ${this.app.name}`,
 						error
 					)
 				).then(

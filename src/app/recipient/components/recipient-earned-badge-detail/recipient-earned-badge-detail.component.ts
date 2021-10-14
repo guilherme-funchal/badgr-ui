@@ -140,13 +140,13 @@ export class RecipientEarnedBadgeDetailComponent extends BaseAuthenticatedRoutab
 	manageCollections() {
 		this.collectionSelectionDialog.openDialog({
 			dialogId: "recipient-badge-collec",
-			dialogTitle: "Add to Collection(s)",
+			dialogTitle: "Adicionar a coleção",
 			omittedCollection: this.badge
 		})
 		.then( recipientBadgeCollection => {
 			this.badge.collections.addAll(recipientBadgeCollection);
 			this.badge.save()
-				.then(  success => this.messageService.reportMinorSuccess(`Collection ${this.badge.badgeClass.name} badges saved successfully`))
+				.then(  success => this.messageService.reportMinorSuccess(`Coleção ${this.badge.badgeClass.name} de badges salvos com sucesso`))
 				.catch( failure => this.messageService.reportHandledError(`Failed to save Collection`, failure));
 		});
 	}
@@ -154,8 +154,8 @@ export class RecipientEarnedBadgeDetailComponent extends BaseAuthenticatedRoutab
 	removeCollection(collection: RecipientBadgeCollection) {
 		this.badge.collections.remove(collection);
 		this.badge.save()
-			.then(  success => this.messageService.reportMinorSuccess(`Collection removed successfully from ${this.badge.badgeClass.name}`))
-			.catch( failure => this.messageService.reportHandledError(`Failed to remove Collection from badge`, failure));
+			.then(  success => this.messageService.reportMinorSuccess(`Coleção removida com sucesso de ${this.badge.badgeClass.name}`))
+			.catch( failure => this.messageService.reportHandledError(`Falha ao remover coleção do badge`, failure));
 	}
 
 	private updateBadge(results) {

@@ -58,7 +58,7 @@ export class IssuerEditComponent extends BaseAuthenticatedRoutableComponent impl
 		protected issuerManager: IssuerManager
 	) {
 		super(router, route, loginService);
-		title.setTitle(`Edit Issuer - ${this.configService.theme['serviceName'] || 'Badgr'}`);
+		title.setTitle(`Editar Emissor - ${this.configService.theme['serviceName'] || 'Badgr'}`);
 
 		this.issuerSlug = this.route.snapshot.params['issuerSlug'];
 
@@ -68,7 +68,7 @@ export class IssuerEditComponent extends BaseAuthenticatedRoutableComponent impl
 
 				this.editIssuerCrumbs = [{title: 'Issuers', routerLink: ['/issuer']},
 					{title: issuer.name, routerLink: ['/issuer/issuers/', this.issuerSlug]},
-					{title: 'Edit Issuer'}];
+					{title: 'Editar Emissor'}];
 
 				this.issuerForm.setValue(
 					{

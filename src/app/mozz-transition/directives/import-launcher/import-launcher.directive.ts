@@ -74,8 +74,8 @@ export class ImportLauncherDirective implements OnInit{
 					);
 			})).finally(() => {
 				// Toast!
-				if(importGood) this.messageService.reportMajorSuccess(`${importGood} Badges successfully imported.`);
-				if(importBad) this.messageService.reportHandledError(`${importBad} Badges could not be imported.`);
+				if(importGood) this.messageService.reportMajorSuccess(`${importGood} Badges importados com sucesso.`);
+				if(importBad) this.messageService.reportHandledError(`${importBad} Badges não pode ser importado.`);
 				localStorage.removeItem('assertion');
 			});
 		}

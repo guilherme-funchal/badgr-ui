@@ -70,9 +70,9 @@ export class RecipientBadgeCollectionEditFormComponent extends BaseAuthenticated
 				.then(
 					success => {
 						this.isEditing = false;
-						this.messageService.reportMinorSuccess(`Saved changes to collection ${this.badgeCollection.name}`);
+						this.messageService.reportMinorSuccess(`Alterações salvas na coleção ${this.badgeCollection.name}`);
 					},
-					failure => this.messageService.reportHandledError(`Failed to save changes to collection ${this.badgeCollection.name}`)
+					failure => this.messageService.reportHandledError(`Falha ao salvar as alterações na coleção ${this.badgeCollection.name}`)
 				).then(
 					() => this.savePromise = null
 				);

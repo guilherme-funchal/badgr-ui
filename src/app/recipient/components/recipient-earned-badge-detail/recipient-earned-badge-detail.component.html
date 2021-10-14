@@ -30,13 +30,14 @@
 					<a class="menuitem"
 						[href]="verifyUrl"
 						><svg icon="icon_checkmark"></svg>Verificar</a>
-					<!--<a class="menuitem"
+					<!--
+					<a class="menuitem"
 						[href]="v2JsonUrl"
 						>Download JSON</a>
 					<a class="menuitem"
 						[href]="v2BakedUrl"
 						>Download Baked Image</a>
-					-->
+					-->	
 					<button class="menuitem"
 						 (click)="deleteBadge(badge)"
 						 [disabled-when-requesting]="true"
@@ -122,7 +123,7 @@
 			<section>
 			<h3 class="u-text-h3-semibold u-margin-bottom2x u-text-dark2 u-margin-top4x"
 				*ngIf="badge.badgeClass.alignment && badge.badgeClass?.alignment.length>0"
-				>Alignment</h3>
+				>Alinhamento</h3>
 			<div
 			     *ngFor="let alignment of badge.badgeClass.alignment; let i=index">
 				<div class="l-flex l-flex-justifybetween">
@@ -140,7 +141,7 @@
 						class="u-text-outlink"
 						[href]="alignment.targetUrl"
 						target="_blank"
-					>View alignment URL
+					>Ver URL de alinhamento
 						<svg icon="icon_external_link"></svg>
 					</a>
 				</div>

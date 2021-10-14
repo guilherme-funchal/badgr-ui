@@ -87,8 +87,8 @@ export class RecipientBadgeCollectionDetailComponent extends BaseAuthenticatedRo
 
 			this.collection.updateBadges(badgeCollection);
 			this.collection.save().then(
-				success => this.messageService.reportMinorSuccess(`Collection ${this.collection.name} badges saved successfully`),
-				failure => this.messageService.reportHandledError(`Failed to save Collection`, failure)
+				success => this.messageService.reportMinorSuccess(`Coleção de ${this.collection.name} badges salva com sucesso`),
+				failure => this.messageService.reportHandledError(`Falha ao salvar coleção`, failure)
 			);
 		});
 	}
@@ -103,10 +103,10 @@ export class RecipientBadgeCollectionDetailComponent extends BaseAuthenticatedRo
 			() => {
 				this.collection.deleteCollection().then(
 					() => {
-						this.messageService.reportMinorSuccess(`Deleted collection '${this.collection.name}'`);
+						this.messageService.reportMinorSuccess(`Coleção excluída '${this.collection.name}'`);
 						this.router.navigate(['/recipient/badge-collections']);
 					},
-					error => this.messageService.reportHandledError(`Failed to delete collection`, error)
+					error => this.messageService.reportHandledError(`Falha ao excluir coleção`, error)
 				);
 			},
 			() => {}
@@ -116,15 +116,15 @@ export class RecipientBadgeCollectionDetailComponent extends BaseAuthenticatedRo
 	removeEntry(entry: RecipientBadgeCollectionEntry) {
 		this.dialogService.confirmDialog.openResolveRejectDialog({
 			dialogTitle: "Confirm Remove",
-			dialogBody: `Are you sure you want to remove ${entry.badge.badgeClass.name} from ${this.collection.name}?`,
-			rejectButtonLabel: "Cancel",
+			dialogBody: `Você tem certeza que deseja remover ${entry.badge.badgeClass.name} de ${this.collection.name}?`,
+			rejectButtonLabel: "Cancela",
 			resolveButtonLabel: "Remove Badge"
 		}).then(
 			() => {
 				this.collection.badgeEntries.remove(entry);
 				this.collection.save().then(
-					success => this.messageService.reportMinorSuccess(`Removed badge ${entry.badge.badgeClass.name} from collection ${this.collection.name} successfully`),
-					failure => this.messageService.reportHandledError(`Failed to remove badge ${entry.badge.badgeClass.name} from collection ${this.collection.name}`, failure)
+					success => this.messageService.reportMinorSuccess(`Remove badge ${entry.badge.badgeClass.name} da coleção ${this.collection.name} removido com sucesso`),
+					failure => this.messageService.reportHandledError(`Falha ao remover o badge ${entry.badge.badgeClass.name} da coleção ${this.collection.name}`, failure)
 				);
 			},
 			() => {}

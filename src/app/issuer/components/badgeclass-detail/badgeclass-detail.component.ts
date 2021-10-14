@@ -166,12 +166,12 @@ export class BadgeClassDetailComponent extends BaseAuthenticatedRoutableComponen
 			() => {
 				instance.revokeBadgeInstance("Manually revoked by Issuer").then(
 					(result) => {
-						this.messageService.reportMinorSuccess(`Revoked badge to ${instance.recipientIdentifier}`);
+						this.messageService.reportMinorSuccess(`Revogue o badge de ${instance.recipientIdentifier}`);
 						this.badgeClass.update();
 						this.updateResults();
 					},
 					(error) =>
-						this.messageService.reportAndThrowError(`Failed to revoke badge to ${instance.recipientIdentifier}`)
+						this.messageService.reportAndThrowError(`Falha ao revogar o emblema para ${instance.recipientIdentifier}`)
 				);
 			},
 			() => void 0 // Cancel
@@ -194,7 +194,7 @@ export class BadgeClassDetailComponent extends BaseAuthenticatedRoutableComponen
 						this.router.navigate([ 'issuer/issuers', this.issuerSlug ]);
 					},
 					(error) => {
-						this.messageService.reportAndThrowError(`Failed to delete badge class: ${BadgrApiFailure.from(error).firstMessage}`);
+						this.messageService.reportAndThrowError(`Falha ao excluir a classe do badge: ${BadgrApiFailure.from(error).firstMessage}`);
 					}
 				);
 
@@ -204,7 +204,7 @@ export class BadgeClassDetailComponent extends BaseAuthenticatedRoutableComponen
 
 			this.confirmDialog.openResolveRejectDialog({
 				dialogTitle: "Error",
-				dialogBody: `All instances of <strong>${this.badgeClass.name}</strong> must be revoked before you can delete it`,
+				dialogBody: `Todas as instâncias <strong>${this.badgeClass.name}</strong> deve ser revogado antes que você possa excluí-lo`,
 				resolveButtonLabel: "Ok",
 				showRejectButton: false
 			}).then(() => void 0, () => void 0);

@@ -164,7 +164,7 @@ xdescribe('IssuerManager', () => {
 							role: "staff",
 						} as ApiIssuerStaffOperation);
 
-						return c.respondWithJson({ message: "Success" }, 200);
+						return c.respondWithJson({ message: "Sucesso" }, 200);
 					}),
 					expectRequestAndRespondWith(
 						mockBackend,
@@ -213,7 +213,7 @@ xdescribe('IssuerManager', () => {
 							role: "editor",
 						} as ApiIssuerStaffOperation);
 
-						return c.respondWithJson({ message: "Success" }, 200);
+						return c.respondWithJson({ message: "Sucesso" }, 200);
 					}),
 					expectRequestAndRespondWith(
 						mockBackend,
@@ -261,7 +261,7 @@ xdescribe('IssuerManager', () => {
 							email: staffMemberToRemove.user.email
 						} as ApiIssuerStaffOperation);
 
-						return c.respondWithJson({ message: "Success" }, 200);
+						return c.respondWithJson({ message: "Sucesso" }, 200);
 					}),
 					expectRequestAndRespondWith(
 						mockBackend,

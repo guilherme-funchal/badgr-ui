@@ -11,7 +11,7 @@ import { animationFramePromise } from "../util/promise-util";
 interface Notification {
 	submodule: "notification-warning" | "notification-success" | "";
 	icon: "icon_priority_high" | "icon_checkmark" | "icon_info";
-	title: "Attention" | "Success" | "Info" | "Loading Error" | "Fatal Error";
+	title: "Atenção" | "Sucesso" | "Info" | "Erro de carga" | "Erro Fatal";
 }
 
 const messageStatusTypeToNotificationMap: { [key in string]: Notification } = {
@@ -37,7 +37,7 @@ const messageStatusTypeToNotificationMap: { [key in string]: Notification } = {
 			</div>
 			<button class="notification-x-close buttonicon buttonicon-clear" (click)="dismissMessage()">
 				<svg class="navitem-x-icon" [attr.icon]="'icon_close'"></svg>
-				<span class="visuallyhidden">Close Notification</span>
+				<span class="visuallyhidden">Fecha Notificação</span>
 			</button>
 		</div>
 	</div>`

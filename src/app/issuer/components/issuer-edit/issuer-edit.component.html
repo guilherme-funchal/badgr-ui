@@ -7,10 +7,10 @@
 			</bg-breadcrumbs>
 		</div>
 		<div class="topbar-x-heading">
-			Edit Issuer
+			Editar Emissor
 		</div>
 		<div class="topbar-x-subheading">
-			Edit the information associated with this issuer profile.
+			Edite as informações associadas a este perfil de emissor.
 		</div>
 
 	</div>
@@ -41,22 +41,22 @@
 
 			<bg-formfield-text class="u-margin-bottom2x"
 			                   [control]="issuerForm.rawControlMap.issuer_url"
-			                   [label]="'Website URL'"
+			                   [label]="'URL do Website'"
 			                   [errorMessage]="'Por favor, insira um URL válido'"
 			                   [urlField]="true"
 			></bg-formfield-text>
 
 			<bg-formfield-select class="u-margin-bottom2x"
 			                     [control]="issuerForm.rawControlMap.issuer_email"
-			                     [label]="'Contact Email'"
-			                     [placeholder]="'Please select a verified email'"
+			                     [label]="'Email de contato'"
+			                     [placeholder]="'Por favor selecione um email verificado'"
 			                     [options]="emailsOptions"
 			                     [errorMessage]="{required:'Selecione um e-mail verificado'}"
 			></bg-formfield-select>
 
 			<bg-formfield-text class="u-margin-bottom2x"
 			                   [control]="issuerForm.rawControlMap.issuer_description"
-			                   [label]="'Description'"
+			                   [label]="'Descrição'"
 			                   [errorMessage]="{ required: 'Por favor insira uma descrição'}"
 			                   [multiline]="true"
 			></bg-formfield-text>
@@ -66,13 +66,13 @@
 				        class="button"
 				        [disabled]="!! editIssuerFinished"
 				        [loading-promises]="[ editIssuerFinished ]"
-				        loading-message="Adding"
-				>Save
+				        loading-message="Adicionando"
+				>Salvar
 				</button>
 				<a [routerLink]="['/issuer/issuers', issuerSlug]"
 				   class="button button-secondary"
 				   [disabled-when-requesting]="true"
-				>Cancel</a>
+				>Cancelar</a>
 			</div>
 
 		</fieldset>

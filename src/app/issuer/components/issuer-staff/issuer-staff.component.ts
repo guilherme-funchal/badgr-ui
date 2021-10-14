@@ -95,9 +95,9 @@ export class IssuerStaffComponent extends BaseAuthenticatedRoutableComponent imp
 
 		member.save().then(
 			() => {
-				this.messageService.reportMajorSuccess(`${member.nameLabel}'s role has been changed to ${member.roleInfo.label}`);
+				this.messageService.reportMajorSuccess(`${member.nameLabel}'s a função foi alterada para ${member.roleInfo.label}`);
 			},
-			error => this.messageService.reportHandledError(`Failed to edit member: ${BadgrApiFailure.from(error).firstMessage}`)
+			error => this.messageService.reportHandledError(`Falha ao editar membro: ${BadgrApiFailure.from(error).firstMessage}`)
 		);
 	}
 
@@ -108,16 +108,16 @@ export class IssuerStaffComponent extends BaseAuthenticatedRoutableComponent imp
 	async removeMember(member: IssuerStaffMember) {
 		if (!await this.dialogService.confirmDialog.openTrueFalseDialog({
 			dialogTitle: `Remove ${member.nameLabel}?`,
-			dialogBody: `${member.nameLabel} is ${member.roleInfo.indefiniteLabel} of ${this.issuer.name}. Are you sure you want to remove them from this role?`,
+			dialogBody: `${member.nameLabel} is ${member.roleInfo.indefiniteLabel} de ${this.issuer.name}. Tem certeza de que deseja removê-los desta função?`,
 			resolveButtonLabel: `Remove ${member.nameLabel}`,
-			rejectButtonLabel: "Cancel",
+			rejectButtonLabel: "Cancela",
 		})) {
 			return;
 		}
 
 		return member.remove().then(
-			() => this.messageService.reportMinorSuccess(`Removed ${member.nameLabel} from ${this.issuer.name}`),
-			error => this.messageService.reportHandledError(`Failed to add member: ${BadgrApiFailure.from(error).firstMessage}`)
+			() => this.messageService.reportMinorSuccess(`Remove ${member.nameLabel} de ${this.issuer.name}`),
+			error => this.messageService.reportHandledError(`Falha ao adicionar membro: ${BadgrApiFailure.from(error).firstMessage}`)
 		);
 	}
 
