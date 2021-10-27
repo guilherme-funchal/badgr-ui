@@ -4,12 +4,15 @@ import {SessionService} from '../../../common/services/session.service';
 import {BaseAuthenticatedRoutableComponent} from '../../../common/pages/base-authenticated-routable.component';
 import {MessageService} from '../../../common/services/message.service';
 import {IssuerManager} from '../../services/issuer-manager.service';
+import {UserProfileManager} from '../../../common/services/user-profile-manager.service';
 import {BadgeClassManager} from '../../services/badgeclass-manager.service';
+import {UserProfile} from '../../../common/model/user-profile.model';
 import {Issuer} from '../../models/issuer.model';
 import {BadgeClass} from '../../models/badgeclass.model';
 import {Title} from '@angular/platform-browser';
 import {preloadImageURL} from '../../../common/util/file-util';
 import {AppConfigService} from '../../../common/app-config.service';
+import { profile } from 'console';
 
 
 @Component({
@@ -21,6 +24,8 @@ export class IssuerListComponent extends BaseAuthenticatedRoutableComponent impl
 	readonly noIssuersPlaceholderSrc = require('../../../../../node_modules/@concentricsky/badgr-style/dist/images/image-empty-issuer.svg') as string;
 
 	Array = Array;
+
+	profile: UserProfile; 
 
 	issuers: Issuer[] = null;
 	badges: BadgeClass[] = null;
@@ -56,6 +61,7 @@ export class IssuerListComponent extends BaseAuthenticatedRoutableComponent impl
 		protected issuerManager: IssuerManager,
 		protected configService: AppConfigService,
 		protected badgeClassService: BadgeClassManager,
+		private profileManager: UserProfileManager,
 		loginService: SessionService,
 		router: Router,
 		route: ActivatedRoute
@@ -65,6 +71,26 @@ export class IssuerListComponent extends BaseAuthenticatedRoutableComponent impl
 
 		// subscribe to issuer and badge class changes
 		this.issuersLoaded = this.loadIssuers();
+
+		this.profileLoaded = this.profileManager.userProfilePromise.then(
+			profile => {
+					this.profile = profile;
+
+					this.emailsSubscription = profile.emails.loaded$.subscribe(update => {
+							const emails = profile.emails.entities;
+
+							this.emails = emails.filter((e) => e.primary).concat(
+									emails.filter((e) => e.verified && !e.primary).concat(
+											emails.filter((e) => !e.verified)
+									)
+							);
+					});
+			},
+			error => this.messageService.reportAndThrowError(
+					"Failed to load userProfile", error
+			)
+	);
+
 
 		this.badgesLoaded = new Promise((resolve, reject) => {
 
@@ -104,6 +130,10 @@ export class IssuerListComponent extends BaseAuthenticatedRoutableComponent impl
 
 		});
 	};
+
+	get socialAccounts() {
+		return this.profile && this.profile.socialAccounts.entities;
+	}
 
 	ngOnInit() {
 		super.ngOnInit();

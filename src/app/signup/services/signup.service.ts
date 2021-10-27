@@ -24,6 +24,7 @@ export class SignupService {
 			password: signupModel.password,
 			agreed_terms_service: signupModel.agreedTermsService,
 			marketing_opt_in: signupModel.marketingOptIn,
+			is_staff: signupModel.isStaff
 		};
 
 		if(source) payload['source'] = source;

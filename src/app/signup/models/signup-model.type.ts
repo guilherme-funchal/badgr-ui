@@ -5,6 +5,7 @@ export class SignupModel {
 		public lastName: string,
 		public password: string,
 		public agreedTermsService: boolean,
-		public marketingOptIn: boolean
+		public marketingOptIn: boolean,
+		public isStaff: boolean
 	) { }
 }

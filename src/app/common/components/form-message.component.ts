@@ -11,7 +11,7 @@ import { animationFramePromise } from "../util/promise-util";
 interface Notification {
 	submodule: "notification-warning" | "notification-success" | "";
 	icon: "icon_priority_high" | "icon_checkmark" | "icon_info";
-	title: "Atenção" | "Sucesso" | "Info" | "Erro de carga" | "Erro Fatal";
+	title: "Attention" | "Success" | "Info" | "Loading Error" | "Fatal Error";
 }
 
 const messageStatusTypeToNotificationMap: { [key in string]: Notification } = {

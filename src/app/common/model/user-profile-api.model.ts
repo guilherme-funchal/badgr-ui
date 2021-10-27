@@ -11,7 +11,9 @@ export interface ApiUserProfile {
 	has_password_set: boolean;
 	latest_terms_description: string;
 	marketing_opt_in: boolean;
+	is_staff: number;
 }
+
 export interface UserProfileRef extends ApiEntityRef {}
 
 /**
@@ -22,6 +24,7 @@ export interface ApiUserProfileEmail {
 	email: string;
 	primary: boolean;
 	verified: boolean;
+	is_staff: boolean;
 }
 export interface UserProfileEmailRef extends ApiEntityRef {}
 

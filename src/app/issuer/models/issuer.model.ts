@@ -47,7 +47,7 @@ export class Issuer extends ManagedEntity<ApiIssuer, IssuerRef> {
 	get createdAt(): Date { return new Date(this.apiModel.created_at); }
 
 	get createdBy(): string { return this.apiModel.created_by; }
-
+        
 	get badgeClassCount(): number {
 		const badges = this.commonManager.badgeManager.badgesList;
 

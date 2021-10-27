@@ -5,16 +5,18 @@
 		<h2 class="topbar-x-heading">
 			Emissores
 			<ng-template [bgAwaitPromises]="[issuersLoaded]" [showLoader]="false">
+			
 			<span class="topbar-x-internalheading">
-				{{ issuers.length | i18nPlural: plural['issuer']}}
+				<!-- {{ issuers.length | i18nPlural: plural['issuer']}} -->
 			</span>
+
 			</ng-template>
 		</h2>
+
 		<button class="button topbar-x-button"
-				*ngIf="!features.disableIssuers"
+				*ngIf="!features.disableIssuers && profile?.isStaff === true"
 				[routerLink]="['/issuer/create']"
-				[disabled-when-requesting]="true"
-		>Criar Emissor</button>
+				[disabled-when-requesting]="true">Criar emissor</button>
 	</div>
 </header>
 
@@ -28,13 +30,13 @@
 			<h2 class="emptysection-x-headline">
 				Você não tem emissores</h2>
 			<p class="emptysection-x-copy">
-				Os emissores permitem que você crie emblemas e os conceda às pessoas..</p>
+			Os emissores permitem que você crie badges</p>
 				<div class="emptysection-x-buttons">
 					<button class="button button-secondary"
-							*ngIf="!features.disableIssuers"
+							*ngIf="!features.disableIssuers && profile?.isStaff === true"
 							[routerLink]="['/issuer/create']"
 							[disabled-when-requesting]="true"
-					>Criar um emissor</button>
+					>Criar emissor</button>
 			</div>
 			<div class="emptysection-x-imagecontainer">
 				<img alt="Illustration" class="emptysection-x-image"
@@ -52,13 +54,13 @@
 				</div>
 				<div class="issuercard-x-title">
 					<a [routerLink]="['/issuer/issuers/', issuer.slug]">{{issuer.name}}</a>
-					<p><strong>Seu papel: </strong>{{ issuer.currentUserStaffMember?.roleInfo.label }}</p>
+					<p><strong>Seu Papel: </strong>{{ issuer.currentUserStaffMember?.roleInfo.label }}</p>
 				</div>
 				<div class="issuercard-x-desc" [truncatedText]="issuer.description" [maxLength]="250"></div>
 
 				<div class="issuercard-x-topbadges" *ngFor="let issuerBadges of [issuerToBadgeInfo[issuer.issuerUrl]]">
 					<h3 class="u-text-body-bold u-text-dark1 u-margin-bottom2x" *ngIf="issuerBadges">
-						Principais Badges:
+						Top Badges:
 					</h3>
 					<div class="l-flex l-flex-2x l-flex-column">
 
@@ -87,7 +89,7 @@
 						<p class="u-text-small u-text-nowrap"
 						[innerHTML]="issuer.badgeClassCount | i18nPlural: plural['badges']"></p>
 					</div>
-					<a class="u-text u-text-small" [routerLink]="['/issuer/issuers/', issuer.slug]">Ver</a>
+					<a class="u-text u-text-small" [routerLink]="['/issuer/issuers/', issuer.slug]">View</a>
 				</div>
 			</div>
 		</section>

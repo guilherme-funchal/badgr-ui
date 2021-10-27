@@ -39,6 +39,9 @@ export class UserProfile extends ManagedEntity<ApiUserProfile, UserProfileRef> {
 	get marketingOptIn() { return this.apiModel.marketing_opt_in; }
 	set marketingOptIn(optedIn: boolean) { this.apiModel.marketing_opt_in = true; }
 
+	get isStaff() { return this.apiModel.is_staff; }
+
+
 	static currentProfileId = "currentUserProfile";
 	/**
 	 * List of emails associated with this user's account.
