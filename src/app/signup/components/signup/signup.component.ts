@@ -30,6 +30,7 @@ export class SignupComponent extends BaseRoutableComponent implements OnInit {
 		.addControl('passwordConfirm', '', [ Validators.required, this.passwordsMatch.bind(this) ])
 		.addControl('agreedTermsService', false, Validators.requiredTrue)
 		.addControl('marketingOptIn', false)
+		.addControl('isStaff', false)
 	;
 
 	signupFinished: Promise<unknown>;
@@ -81,7 +82,8 @@ export class SignupComponent extends BaseRoutableComponent implements OnInit {
 			formState.lastName,
 			formState.password,
 			formState.agreedTermsService,
-			formState.marketingOptIn
+			formState.marketingOptIn,
+			formState.isStaff
 		);
 
 		this.signupFinished = new Promise((resolve, reject) => {

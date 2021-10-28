@@ -6,14 +6,14 @@ import {MessageService} from '../../../common/services/message.service';
 import {IssuerManager} from '../../services/issuer-manager.service';
 import {UserProfileManager} from '../../../common/services/user-profile-manager.service';
 import {BadgeClassManager} from '../../services/badgeclass-manager.service';
-import {UserProfile} from '../../../common/model/user-profile.model';
+import {UserProfile, UserProfileEmail} from '../../../common/model/user-profile.model';
 import {Issuer} from '../../models/issuer.model';
 import {BadgeClass} from '../../models/badgeclass.model';
 import {Title} from '@angular/platform-browser';
 import {preloadImageURL} from '../../../common/util/file-util';
 import {AppConfigService} from '../../../common/app-config.service';
 import { profile } from 'console';
-
+import {Subscription} from 'rxjs';
 
 @Component({
 	selector: 'issuer-list',
@@ -30,9 +30,12 @@ export class IssuerListComponent extends BaseAuthenticatedRoutableComponent impl
 	issuers: Issuer[] = null;
 	badges: BadgeClass[] = null;
 	issuerToBadgeInfo: {[issuerId: string]: IssuerBadgesInfo} = {};
+	emails: UserProfileEmail[];
 
 	issuersLoaded: Promise<unknown>;
 	badgesLoaded: Promise<unknown>;
+	profileLoaded: Promise<unknown>;
+	private emailsSubscription: Subscription;
 
 	get theme() { return this.configService.theme; }
 	get features() { return this.configService.featuresConfig; }

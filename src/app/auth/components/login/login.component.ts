@@ -124,7 +124,7 @@ export class LoginComponent extends BaseRoutableComponent implements OnInit, Aft
 				(response: HttpErrorResponse) =>
 					this.messageService.reportHandledError(
 						BadgrApiFailure.messageIfThrottableError(response.error) ||
-						"Login failed. Please check your email and password and try again."
+						"Falha de login, verifique seus dados."
 						, response
 					)
 			)

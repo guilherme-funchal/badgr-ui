@@ -41,7 +41,6 @@ export class UserProfile extends ManagedEntity<ApiUserProfile, UserProfileRef> {
 
 	get isStaff() { return this.apiModel.is_staff; }
 
-
 	static currentProfileId = "currentUserProfile";
 	/**
 	 * List of emails associated with this user's account.

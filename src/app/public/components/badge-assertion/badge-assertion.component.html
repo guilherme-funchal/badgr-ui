@@ -88,7 +88,7 @@
 					<a class="button"
 					   *ngIf="!showDownload"
 						 (click)="verifyBadge()"
-					>Verify Badge</a>
+					>Verificar Badge</a>
 
 					<a class="button"
 						(click)="openSaveDialog(assertion)"
@@ -98,7 +98,7 @@
 					<button class="buttonicon buttonicon-secondary" id="actionstrigger"
 			    		[bgPopupMenuTrigger]="moreMenu">
 				        <svg icon="icon_more"></svg>
-				        <span class="visuallyhidden">More</span>
+				        <span class="visuallyhidden">Mais</span>
 				    </button>
 					<bg-popup-menu #moreMenu>
 						<a class="menuitem"
@@ -108,14 +108,14 @@
 							[href]="rawBakedUrl"
 							download=true
 							target="_blank"
-						><svg icon="icon_external_link"></svg>Download Baked Image</a>
+						><svg icon="icon_external_link"></svg>Download Imagem</a>
 						<a class="menuitem"
 							*ngIf="assertion.sourceUrl"
 							[href]="assertion.sourceUrl"
-						><svg icon="icon_external_link"></svg>View Original</a>
+						><svg icon="icon_external_link"></svg>Ver Original</a>
 						<a class="menuitem"
 							[routerLink]="routerLinkForUrl(badgeClass.hostedUrl || badgeClass.id)">
-							<svg icon="icon_badge"></svg>View Badge</a>
+							<svg icon="icon_badge"></svg>Ver Badge</a>
 					</bg-popup-menu>
 				</div>
 			</div>

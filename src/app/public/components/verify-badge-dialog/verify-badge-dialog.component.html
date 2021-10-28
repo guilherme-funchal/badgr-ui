@@ -62,7 +62,7 @@
 							</h1>
 							<p class="u-text u-text-small u-width-small u-animate-step6">
 								{{isBadgeVerified
-									? 'Este badge foi verificado por Badgr e suas informações são válidas.'
+									? 'Este badge foi verificado pelo Serpro e suas informações são válidas.'
 									: 'Este badge não foi verificado.'
 								}}
 							</p>
@@ -80,7 +80,7 @@
 										>
 											<ng-container *ngSwitchCase="AWARDED_STATES.MATCH"> {{identityEmail}}</ng-container>
 											<ng-container *ngSwitchCase="AWARDED_STATES.NO_MATCH"> Este badge não foi concedido a {{identityEmail}} </ng-container>
-											<ng-container *ngSwitchCase="AWARDED_STATES.NOT_VERIFIED"> Destinatário não verificado </ng-container>
+											<ng-container *ngSwitchCase="AWARDED_STATES.NOT_VERIFIED"> Destinatário não verificado {{identityEmail}}</ng-container>
 										</dd>
 									</div>
 								</div>
@@ -120,7 +120,7 @@
 					</div>
 				</div>
 			</div>
-
+                        <!--
 			<div class="l-stack l-stack-justifybetween u-margin-top3x">
 				<a class="u-text-outlink"
 				   [href]="verifyUrl"
@@ -130,7 +130,7 @@
 				</a>
 				<button class="button" (click)="closeDialog()">Feito</button>
 			</div>
-
+	                -->
 		</div>
 	</div>
 </dialog>
