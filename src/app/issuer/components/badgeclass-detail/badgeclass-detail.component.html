@@ -67,13 +67,21 @@
 						<dd class="u-text"><time [date]="badgeClass.createdAt" format="dd/MM/y"></time></dd>
 				    	<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2"
 				    		*ngIf="badgeClass.expiresAmount"
-				    		>Expira após:</dt>
-				    	<dd class="u-text"
+				    		>Expira em:</dt>
+					<dd class="u-text"
 				    		*ngIf="badgeClass.expiresAmount > 1"
-			    		>{{ badgeClass.expiresAmount }} {{ badgeClass.expiresDuration }}</dd>
+			    		>
+					<!-- {{ badgeClass.expiresAmount }} {{ badgeClass.expiresDuration }}</dd> -->
+					
+					{{ badgeClass.expiresAmount }} Anos
+
 				    	<dd class="u-text"
 				    		*ngIf="badgeClass.expiresAmount == 1"
-			    		>{{ badgeClass.expiresAmount }} {{ badgeClass.expiresDuration.slice(0, -1) }}</dd>
+			    		>
+					<!--
+					{{ badgeClass.expiresAmount }} {{ badgeClass.expiresDuration.slice(0, -1) }}</dd>
+					-->
+					{{ badgeClass.expiresAmount }} Ano
 					</dl>
 				</div>
 			</div>
@@ -146,7 +154,10 @@
 
 				<!-- recipients -->
 				<div class="l-stack u-margin-bottom2x u-margin-top4x">
+					<!--
 					<h2 class="u-text-h3-semibold u-text-dark2">{{ recipientCount }} {{ recipientCount == 1 ? 'Recebedor' : 'Recebedores' }} de Badge</h2>
+					-->
+					<h2 class="u-text-h3-semibold u-text-dark2">Premiados com Badges</h2>
 					<div class="forminput forminput-hasicon">
 						<p class="forminput-x-sublabel"
 							>Pesquise por endereço de e-mail</p>
@@ -211,7 +222,7 @@
 						><svg icon="icon_share"></svg>Compartilhar</button>
 						<button type="button" class="menuitem"
 										(click)="revokeInstance(popInstance)"
-						><svg icon="icon_remove"></svg>Revogar</button>
+						><svg icon="icon_remove"></svg>Excluir</button>
 						<ng-container *ngIf="launchpoints">
 							<button class="menuitem" type="button"
 									*ngFor="let lp of launchpoints"
@@ -229,7 +240,7 @@
 						><svg icon="icon_share"></svg>Compartilhar</button>
 						<button type="button" class="menuitem"
 										(click)="revokeInstance(popInstance)"
-						><svg icon="icon_remove"></svg>Revogar</button>
+						><svg icon="icon_remove"></svg>Excluir</button>
 						<ng-container *ngIf="launchpoints">
 							<button class="menuitem" type="button"
 									*ngFor="let lp of launchpoints"

@@ -53,13 +53,13 @@ export class RequestPasswordResetComponent extends BaseRoutableComponent {
 			err => {
 				if (err.status === 429) {
 					this.messageService.reportAndThrowError(
-						'Forgot password request limit exceeded.' +
-						' Please check your inbox for an existing message or wait to retry.',
+						'O limite de solicitação de senha esquecida foi excedido.' +
+						'Verifique sua caixa de entrada para ver se há uma mensagem existente ou espere para tentar novamente.',
 						err
 					);
 				} else {
 					this.messageService.reportAndThrowError(
-						'Failed to send password reset request. Please contact support.',
+						'Falha ao enviar solicitação de redefinição de senha. Entre em contato com o suporte.',
 						err
 					);
 				}

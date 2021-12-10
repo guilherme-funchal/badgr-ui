@@ -60,7 +60,7 @@
 
 				<div class="issuercard-x-topbadges" *ngFor="let issuerBadges of [issuerToBadgeInfo[issuer.issuerUrl]]">
 					<h3 class="u-text-body-bold u-text-dark1 u-margin-bottom2x" *ngIf="issuerBadges">
-						Top Badges:
+						Badges:
 					</h3>
 					<div class="l-flex l-flex-2x l-flex-column">
 
@@ -74,7 +74,10 @@
 											class="u-text-link u-break-word">
 											{{ badge.name }}
 										</a>
+										<!--
 										<p class="u-text-small u-text-dark4">{{ badge.recipientCount | i18nPlural: plural['recipient'] }}</p>
+									        -->
+										<p class="u-text-small u-text-dark4">{{ badge.recipientCount }}</p>Premiados
 									</div>
 								</div>
 							</ng-container>
@@ -89,7 +92,7 @@
 						<p class="u-text-small u-text-nowrap"
 						[innerHTML]="issuer.badgeClassCount | i18nPlural: plural['badges']"></p>
 					</div>
-					<a class="u-text u-text-small" [routerLink]="['/issuer/issuers/', issuer.slug]">View</a>
+					<a class="u-text u-text-small" [routerLink]="['/issuer/issuers/', issuer.slug]">Visualizar</a>
 				</div>
 			</div>
 		</section>

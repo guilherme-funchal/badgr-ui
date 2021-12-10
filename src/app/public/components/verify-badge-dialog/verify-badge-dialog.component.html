@@ -109,7 +109,7 @@
 											<ng-container *ngSwitchCase="EXPIRY_STATES.NEVER_EXPIRES"> Não expira</ng-container>
 											<ng-container *ngSwitchCase="EXPIRY_STATES.NOT_EXPIRED">
 												<time [date]="badgeAssertion?.expires"
-															format="mediumDate"
+															format="dd/MM/yyyy"
 												></time>
 											</ng-container>
 										</dd>

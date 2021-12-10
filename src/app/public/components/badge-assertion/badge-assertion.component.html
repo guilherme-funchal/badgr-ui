@@ -153,7 +153,9 @@
 				    	<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2" *ngIf="awardedToDisplayName">Concedido a:</dt>
 				    	<dd class="u-text u-break-all">{{ awardedToDisplayName }}</dd>
 				    	<dt class="u-text-small-bold u-padding-top2x u-margin-top2x border border-top border-light3 u-text-dark2" *ngIf="assertion.expires">
-				    		<span>{{ +isExpired | i18nPlural: tense['expires'] }} on:</span>
+				    	       <!--	<span>{{ +isExpired | i18nPlural: tense['expires'] }} on:</span> -->
+					       <span>Expira em:</span>
+
 				    	</dt>
 							<dd class="u-text" *ngIf="assertion.expires"><time [date]="assertion?.expires" format="dd/MM/yyyy"></time></dd>
 					</dl>
@@ -176,6 +178,7 @@
 						<markdown-display
 							[value]="badgeClass.criteria.narrative"></markdown-display>
 					</show-more>
+					<!--
 					<div class="u-margin-yaxis2x"
 						*ngIf="badgeClass.criteria.id">
 						<a class="u-text-outlink" target="_blank"
@@ -183,7 +186,7 @@
 						>Ver URL de critério externo 
 							<svg icon="icon_external_link"></svg>
 						</a>
-					</div>
+					</div> -->
 				</section>
 
 				<!-- alignment -->

@@ -134,7 +134,7 @@ export class BadgeClassDetailComponent extends BaseAuthenticatedRoutableComponen
 			.then(
 				retInstances => {
 					this.crumbs = [
-						{title: 'Issuers', routerLink: ['/issuer/issuers']},
+						{title: 'Emissores', routerLink: ['/issuer/issuers']},
 						{title: this.issuer.name, routerLink: ['/issuer/issuers/' + this.issuerSlug]},
 						{title: this.badgeClass.name, routerLink: ['/issuer/issuers/' + this.issuerSlug + '/badges/' + this.badgeSlug]},
 					];
@@ -159,8 +159,8 @@ export class BadgeClassDetailComponent extends BaseAuthenticatedRoutableComponen
 	) {
 		this.confirmDialog.openResolveRejectDialog({
 			dialogTitle: "Cuidado",
-			dialogBody: `Tem certeza que deseja revogar <strong>${this.badgeClass.name}</strong> de <strong>${instance.recipientIdentifier}</strong>?`,
-			resolveButtonLabel: "Revogar Badge",
+			dialogBody: `Tem certeza que deseja excluir <strong>${this.badgeClass.name}</strong> de <strong>${instance.recipientIdentifier}</strong>?`,
+			resolveButtonLabel: "Excluir Badge",
 			rejectButtonLabel: "Cancelar"
 		}).then(
 			() => {
@@ -171,7 +171,7 @@ export class BadgeClassDetailComponent extends BaseAuthenticatedRoutableComponen
 						this.updateResults();
 					},
 					(error) =>
-						this.messageService.reportAndThrowError(`Falha ao revogar o emblema para ${instance.recipientIdentifier}`)
+						this.messageService.reportAndThrowError(`Falha ao excluir o badge para ${instance.recipientIdentifier}`)
 				);
 			},
 			() => void 0 // Cancel

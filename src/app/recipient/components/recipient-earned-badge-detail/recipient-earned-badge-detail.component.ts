@@ -122,7 +122,8 @@ export class RecipientEarnedBadgeDetailComponent extends BaseAuthenticatedRoutab
 	}
 
 	get verifyUrl() {
-		let url = `${this.configService.assertionVerifyUrl}?url=${this.rawJsonUrl}`;
+	//	let url = `${this.configService.assertionVerifyUrl}?url=${this.rawJsonUrl}`;
+		let url = `${this.rawJsonUrl}`;
 
 		for (const IDENTITY_TYPE of ['identity__email', 'identity__url', 'identity__telephone']) {
 			const identity = this.queryParametersService.queryStringValue(IDENTITY_TYPE);
