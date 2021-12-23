@@ -199,7 +199,7 @@ export class SessionService {
 			const redirectUri = params.get("redirect_uri");
 			if(redirectUri) localStorage.redirectUri = redirectUri;
 			// If we're not on a public page, send the user to the login page with an error
-			window.location.replace(`/auth/login?authError=${encodeURIComponent("Your session has expired. Please log in to continue.")}`);
+			window.location.replace(`/auth/login?authError=${encodeURIComponent("Sua sessão esta expirada. Por favor logue novamente.")}`);
 		} else {
 			// If we _are_ on a public page, reload the page after clearing the session token, because that will clear any messy error states from
 			// api errors.

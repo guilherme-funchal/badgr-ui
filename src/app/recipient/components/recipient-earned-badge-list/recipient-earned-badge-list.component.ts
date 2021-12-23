@@ -103,7 +103,7 @@ export class RecipientEarnedBadgeListComponent extends BaseAuthenticatedRoutable
 			// force a refresh of the userProfileSet now that we are authenticated
 			profileManager.userProfileSet.updateList().then(p => {
 				if (profileManager.userProfile.agreedTermsVersion !== profileManager.userProfile.latestTermsVersion) {
-					dialogService.newTermsDialog.openDialog();
+				//	dialogService.newTermsDialog.openDialog();
 				}
 			});
 		}

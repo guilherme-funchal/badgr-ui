@@ -70,17 +70,20 @@
 
 								<div class="l-flex l-flex-1x">
 									<svg class="u-animate-step1 icon l-flex-x-shrink0"
-									     [ngClass]="awardedState === AWARDED_STATES.MATCH ? 'icon-success' : 'icon-notice' "
-									     [icon]="   awardedState === AWARDED_STATES.MATCH ? 'icon_checkmark_circle' : 'icon_error' "
+									     [ngClass]="awardedState === AWARDED_STATES.MATCH ? 'icon-success' : 'icon-success' "
+									     [icon]="   awardedState === AWARDED_STATES.MATCH ? 'icon_checkmark_circle' : 'icon_checkmark_circle' "
 									></svg>
 									<div>
 										<dt class="u-text-small-bold u-text-dark2">Premiado a</dt>
+										<dd class="u-margin-bottom2x">{{ badgeAssertion?.recipient.identity }}</dd>
 										<dd class="u-margin-bottom2x"
 										    [ngSwitch]="awardedState"
 										>
-											<ng-container *ngSwitchCase="AWARDED_STATES.MATCH"> {{identityEmail}}</ng-container>
-											<ng-container *ngSwitchCase="AWARDED_STATES.NO_MATCH"> Este badge não foi concedido a {{identityEmail}} </ng-container>
+										<!--
+											<ng-container *ngSwitchCase="AWARDED_STATES.MATCH"> {{ badgeAssertion?.recipient.identity }}</ng-container>
+											<ng-container *ngSwitchCase="AWARDED_STATES.NO_MATCH"> Este badge foi concedido a {{ badgeAssertion?.recipient.identity }} </ng-container>
 											<ng-container *ngSwitchCase="AWARDED_STATES.NOT_VERIFIED"> Destinatário não verificado {{identityEmail}}</ng-container>
+										-->
 										</dd>
 									</div>
 								</div>

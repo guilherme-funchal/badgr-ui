@@ -5,7 +5,7 @@ import {Component, Input} from '@angular/core';
     template: `
 			<div class="l-flex l-flex-column l-flex-aligncenter l-flex-justifycenter u-margin-top2x {{className}}">
 				<div class="loaderspin loaderspin-large"></div>
-				<p class="u-text u-padding-top2x">Loading...</p>
+				<p class="u-text u-padding-top2x">Carregando...</p>
 			</div>`
 })
 export class LoadingDotsComponent {

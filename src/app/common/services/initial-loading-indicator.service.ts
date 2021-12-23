@@ -27,7 +27,7 @@ export class InitialLoadingIndicatorService {
 		// scheduling that for the next angular cycle. If something sets a new promise before the next cycle, however, it
 		// will preempt this default.
 		// UPDATE: Jan 2018 -- this trick didnt work in production mode, setting timeout to 100ms for smoothing
-		this.initialLoadedPromise = new Promise(resolve => setTimeout(resolve, 100));
+		this.initialLoadedPromise = new Promise(resolve => setTimeout(resolve, 200));
 	}
 
 	private hideIndicator() {
