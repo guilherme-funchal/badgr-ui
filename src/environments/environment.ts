@@ -4,7 +4,7 @@ export const environment: BadgrEnvironment = {
 		production: true,
 		config: {
 			api: {
-			baseUrl: "http://161.148.151.16:8080",
+			baseUrl: "https://161.148.151.16:8080",
 			},
 		}
 	}

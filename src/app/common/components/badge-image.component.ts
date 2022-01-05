@@ -16,26 +16,26 @@ import {preloadImageURL} from '../util/file-util';
 	template: `
 		<a [routerLink]="['/issuer/issuers/', badge?.issuerSlug || '', 'badges', badge?.slug || '']"
 		   *ngIf="link && !loading && !failed">
-			<img [src]="badgeImageUrl"
+			<img [src]="badgeImageUrl || ''"
 			     [title]="badge?.name"
 			     [width]="size"
 			     [height]="size"
 			/>
 		</a>
 		<a *ngIf="!(link && !loading && !failed)">
-			<img [src]="loadingBadgeUrl"
+			<img [src]="loadingBadgeUrl || ''"
 			     *ngIf="loading"
 			     title="Loading Badge..."
 			     [width]="size"
 			     [height]="size"
 			/>
-			<img [src]="failedBadgeUrl"
+			<img [src]="failedBadgeUrl || ''"
 			     *ngIf="! loading && failed"
 			     title="Badge Failed to Load"
 			     [width]="size"
 			     [height]="size"
 			/>
-			<img [src]="badgeImageUrl"
+			<img [src]="badgeImageUrl || ''"
 			     *ngIf="! loading && ! failed"
 			     [title]="badge?.name"
 			     [width]="size"

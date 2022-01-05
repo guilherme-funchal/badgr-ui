@@ -298,9 +298,9 @@ export const defaultValidatorMessages: {
 	[validatorKey: string]: (label: string, result?: unknown) => string
 } = {
 	'required': (label: string) => `${label} is required`,
-	'validUrl': () => `Please enter a valid URL`,
-	'invalidTelephone': () => `Please enter a valid phone number`,
-	'invalidEmail': () => `Please enter a valid email address`,
+	'validUrl': () => `Por favor digite uma URL valida`,
+	'invalidTelephone': () => `Por favor digite um telefone valido`,
+	'invalidEmail': () => `Por favor digite um email valido`,
 	'maxlength': (
 		label: string,
 		{actualLength, requiredLength}: { actualLength: number; requiredLength: number }

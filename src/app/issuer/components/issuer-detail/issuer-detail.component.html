@@ -47,10 +47,12 @@
 							<svg icon="icon_remove"></svg>
 							Excluir
 						</a>
+						<!--
 						<a class="menuitem" [routerLink]="['./staff']">
 							<svg icon="icon_group"></svg>
 							{{ issuer?.currentUserStaffMember?.isOwner ? "Gerenciar": "Ver" }} Equipe
 						</a>
+						-->
 						<a class="menuitem" *ngFor="let lp of launchpoints" href="{{lp.launch_url}}" target="_blank">
 							<svg icon="icon_external_link"></svg>
 							{{lp.label}}

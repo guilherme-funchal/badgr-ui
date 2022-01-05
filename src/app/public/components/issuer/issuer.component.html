@@ -40,11 +40,11 @@
 						<div class="u-margin-top1x">
 							<a class="u-text-outlink" target="_blank"
 								[href]="issuer.url"
-							>Visit Website<svg icon="icon_external_link"></svg></a></div>
+							>Visitar website<svg icon="icon_external_link"></svg></a></div>
 					</div>
 					<div class="topbar-x-buttons">
 						<div class="l-primarymore">
-							<a class="button" href="mailto:{{ issuer.email }}">Contact Issuer</a>
+							<a class="button" href="mailto:{{ issuer.email }}">Falar com emissor</a>
 							<button class="buttonicon buttonicon-secondary" id="actionstrigger"
 							[bgPopupMenuTrigger]="moreMenu">
 								<svg icon="icon_more"></svg>
@@ -53,11 +53,11 @@
 							<bg-popup-menu #moreMenu>
 								<a class="menuitem" target="_blank"
 								[href]="rawJsonUrl"
-								><svg icon="icon_external_link"></svg>View JSON</a>
+								><svg icon="icon_external_link"></svg>Ver JSON</a>
 								<a class="menuitem" target="_blank"
 								   [href]="issuer.sourceUrl"
 								   *ngIf="issuer.sourceUrl"
-								><svg icon="icon_external_link"></svg>View Original</a>
+								><svg icon="icon_external_link"></svg>Ver Original</a>
 							</bg-popup-menu>
 						</div>
 					</div>

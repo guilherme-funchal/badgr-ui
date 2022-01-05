@@ -16,7 +16,7 @@ declare function require(path: string): string;
 					[loaded-src]="badgeImage"
 					[loading-src]="badgeLoadingImageUrl"
 					[error-src]="badgeFailedImageUrl"
-					width="80" />
+					width="60" />
 			</div>
 			<a *ngIf="badgeSlug" class="badgecard-x-title u-text-breakword" [routerLink]="['../earned-badge', badgeSlug]">{{ badgeTitle }}</a>
 			<a *ngIf="publicUrl" class="badgecard-x-title" [href]="publicUrl">{{ badgeTitle }}</a>
@@ -25,7 +25,7 @@ declare function require(path: string): string;
 		</div>
 		<div class="badgecard-x-footer">
 			<div class="badgecard-x-date">
-				<time [date]="badgeIssueDate" format="dd/MM/yyyy hh:mm"></time>
+				<time [date]="badgeIssueDate" format="dd/MM/yyyy"></time>
 			</div>
 
 			<!-- Show Verify or Share Button unless public -->

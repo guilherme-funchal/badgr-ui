@@ -164,7 +164,8 @@ export class SessionService {
 	submitResetPasswordRequest(email: string) {
 		// TODO: Define the type of this response
 		return this.http.post<unknown>(
-			this.baseUrl + '/v1/user/forgot-password',
+			this.baseUrl + '/v2/auth/forgot-password',
+			//	this.baseUrl + '/v1/user/forgot-password',
 			'email=' + encodeURIComponent(email),
 			{
 				observe: "response",
@@ -178,7 +179,8 @@ export class SessionService {
 	submitForgotPasswordChange(newPassword: string, token: string) {
 		// TODO: Define the type of this response
 		return this.http.put<unknown>(
-			this.baseUrl + '/v1/user/forgot-password',
+			this.baseUrl + '/v2/auth/forgot-password',
+			// this.baseUrl + '/v1/user/forgot-password',
 			{ password: newPassword, token },
 			{
 				observe: "response",

@@ -34,14 +34,11 @@
 					<a class="menuitem"
 						[href]="v2JsonUrl"
 						>Download JSON</a>
-					<a class="menuitem"
-						[href]="v2BakedUrl"
-						>Download Baked Image</a>
-					-->	
-					<button class="menuitem"
-						 (click)="deleteBadge(badge)"
-						 [disabled-when-requesting]="true"
-						><svg icon="icon_remove"></svg>Delete</button>
+			                -->
+					<a class="menuitem" [href]="rawJsonUrl"><svg icon="icon_external_link"></svg>Download JSON</a>
+
+					<a class="menuitem" [href]="rawBakedUrl"><svg icon="icon_external_link"></svg>Download Imagem</a>	
+					<button class="menuitem" (click)="deleteBadge(badge)" [disabled-when-requesting]="true"> <svg icon="icon_remove"></svg>Delete</button>
 					<ng-container *ngIf="launchpoints">
 						<a class="menuitem" *ngFor="let lp of launchpoints" (click)="clickLaunchpoint(lp)">
 							<svg icon="icon_external_link"></svg>

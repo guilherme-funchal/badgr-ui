@@ -11,14 +11,14 @@ import { animationFramePromise } from "../util/promise-util";
 interface Notification {
 	submodule: "notification-warning" | "notification-success" | "";
 	icon: "icon_priority_high" | "icon_checkmark" | "icon_info";
-	title: "Atenção" | "Success" | "Info" | "Loading Error" | "Fatal Error";
+	title: "Atenção" | "Sucesso" | "Info" | "Loading Error" | "Fatal Error";
 }
 
 const messageStatusTypeToNotificationMap: { [key in string]: Notification } = {
 	"error" : {submodule: "notification-warning", title: "Atenção", icon: "icon_priority_high"},
 	"load-error" : {submodule: "notification-warning", title: "Loading Error", icon: "icon_priority_high"},
 	"fatal-error" : {submodule: "notification-warning", title: "Fatal Error", icon: "icon_priority_high"},
-	"success": {submodule: "notification-success", title: "Success", icon: "icon_checkmark"},
+	"success": {submodule: "notification-success", title: "Sucesso", icon: "icon_checkmark"},
 	"info": {submodule: "", title: "Info", icon: "icon_checkmark"},
 };
 

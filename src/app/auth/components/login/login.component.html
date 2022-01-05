@@ -36,7 +36,7 @@
 				[control]="loginForm.rawControlMap.username"
 				label="Email"
 				fieldType="email"
-				[errorMessage]="{required: 'Please enter your email address'}"
+				[errorMessage]="{required: 'Por favor digite o seu email'}"
 				[autofocus]="true"
 				[initialValue]="verifiedEmail || ''"
 				#usernameField
@@ -47,17 +47,19 @@
 				[control]="loginForm.rawControlMap.password"
 				label="Senha"
 				class="u-margin-top2x"
-				[errorMessage]="'Please enter your password'"
+				[errorMessage]="'Por favor insira uma senha'"
 				fieldType="password"
 				#passwordField
 			>
-				<span label-additions>
+				<!--
+			        <span label-additions>
 				<a class="forminput-x-helplink"
 				   href="#"
 				   tabindex="-1"
 				   [routerLink]="['/auth/request-password-reset', usernameField.value]"
 				>Perdeu a senha?</a>
 				</span>
+				-->
 			</bg-formfield-text>
 
 			<div class="l-stack l-stack-buttons l-stack-2x u-margin-top2x">

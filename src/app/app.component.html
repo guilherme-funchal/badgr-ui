@@ -8,7 +8,6 @@
 				<img [src]="logoSmall" alt="Logo">
 			</picture>
 		</a>
-
 		<!-- Unauthenticated -->
 		<ng-template [ngIf]="!loggedIn">
 			<nav class="navbar-x-items">
@@ -26,10 +25,7 @@
 				<div class="navbar-x-navitems">
 					<a role="menuitem" [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active"
 					 [routerLink]="['/recipient/badges']">Backpack</a>
-					<a role="menuitem" [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active"
-					 [routerLink]="['/recipient/badge-collections']">Coleções</a>
-					<a role="menuitem" *ngIf="showIssuersTab" [class.navitem-light]="!theme.useColorNavbar"
-	     class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/issuer']">Emissores</a>
+					<a role="menuitem" *ngIf="showIssuersTab" [class.navitem-light]="!theme.useColorNavbar" class="navitem" routerLinkActive="navitem-is-active" [routerLink]="['/issuer']">Emissores</a>
 					<button role="menuitem" aria-haspopup="true" [class.navitem-light]="!theme.useColorNavbar" class="navitem u-cursor-pointer"
 					 *ngIf="launchpoints?.length" routerLinkActive="navitem-is-active" [bgPopupMenuTrigger]="appsMenu">
 						Apps
@@ -72,8 +68,7 @@
 
 	<bg-popup-menu #accountMenu>
 		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/profile/profile']"><svg icon="icon_member"></svg>Perfil</a>
-		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/profile/app-integrations']"><svg icon="icon_compare"></svg>App
-			Integradas</a>
+		<!-- <a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/profile/app-integrations']"><svg icon="icon_compare"></svg>App Integradas</a> -->
 		<a class="menuitem" routerLinkActive="menuitem-is-active" [routerLink]="['/auth/logout']"><svg icon="icon_exit_to_app"></svg>Sair
 			</a>
 	</bg-popup-menu>
@@ -95,7 +90,6 @@
 	 [class.mobilenav-light]="!theme.useColorNavbar">
 		<div class="mobilenav-x-navitems">
 			<a [routerLink]="['/recipient/badges']">Backpack</a>
-			<a [routerLink]="['/recipient/badge-collections']">Coleções</a>
 			<a [routerLink]="['/issuer']" *ngIf="showIssuersTab">Emissores</a>
 
 			<hr class="mobilenav-x-rule" *ngIf="launchpoints?.length">
@@ -107,9 +101,9 @@
 			<a [href]="item.url" *ngFor="let item of theme?.customMenu?.items" target="_blank"> {{ item.label }} </a>
 
 			<hr class="mobilenav-x-rule">
-			<p class="mobilenav-x-label">Account</p>
-			<a [routerLink]="['/profile/profile']">Profile</a>
-			<a [routerLink]="['/profile/app-integrations']">App Integradas</a>
+			<p class="mobilenav-x-label">Conta</p>
+			<a [routerLink]="['/profile/profile']">Perfil</a>
+			<!-- <a [routerLink]="['/profile/app-integrations']">App Integradas</a> -->
 			<a [routerLink]="['/auth/logout']">Sair</a>
 		</div>
 	</nav>
